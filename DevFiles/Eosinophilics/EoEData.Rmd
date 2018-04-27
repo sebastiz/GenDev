@@ -1,0 +1,85 @@
+---
+title: "EoEData"
+author: "Sebastian Zeki"
+date: "Friday, February 10, 2017"
+output: word_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Percentage of endoscopies where feature described (%)"}
+barplot(Findings$n,names.arg=c("Trachealization", "Furrows","Narrow",
+                               "Plaques","Stricture","Exudate","Oedema","Normal"),
+        las=3, ylab = "Percentage of endoscopies where feature described (%)",
+        cex.lab = 2.0,cex.axis=1.5,cex.main = 1.5,cex.names=1.5)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Other described endoscopic features in EoE"}
+barplot(Findings2$n,names.arg=c("Schatzki","Candida","Debris","Oesophagitis"),
+        las=3, ylab = "Other described features",main="Other described endoscopic features in EoE",
+        cex.lab = 2.0,cex.axis=1.5,cex.main = 1.5,cex.names=1.5)
+
+```
+
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Average Eosinophil per hpf per finding"}
+barplot(DDR$n,names.arg=c("Trachealization", "NoTrachealization", "Furrows", "NoFurrows","Narrow","NoNarrow",
+                          "Plaques","NoPlaques","Stricture","NoStricture","Exudate","NoExudate","Oedema","NoOedema"),
+        las=3,xlab = "Endoscopic Findings", ylab = "Average Eosinophil per hpf per finding",
+        cex.lab = 2.0,cex.axis=1.5,cex.main = 1.5,cex.names=1.5,main = "EoE Findings Endoscopic")
+
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Plot of age distribution in diagnosed Eosinophilic Oesophagitis"}
+barplot(table(PatientsWithEoE$Ages))
+br = seq(0,100,by=5)
+barplot(table(cut(PatientsWithEoE$Ages, br)),main= "Age distibution of Eosinophilic Oesophagitis Patients",angle = 45)
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Indications For Endoscopy in Eosinophilic Oesophagitis"}
+barplot(head(sort(table(s1),decreasing=T),5),
+        las=3,
+        cex.lab = 0.5,cex.axis=0.5,cex.main = 1.5,cex.names=0.9,
+        space=1,main = "Indications for Endoscopy of 
+        \nEosinophilic Oesophagitis Patients",angle = 45)
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="HPF vs Age in EoE"}
+qplot(PatientsWithEoE$HPF,binwidth = 25)+
+  labs(title="Eosinophil hpf in EoE", x="Max Eosinophils/hpf", y="Freq") +
+  theme(axis.text=element_text(size=25)) +
+  theme(axis.title=element_text(size=30))+
+  theme(legend.position = "none")+
+  theme(plot.title = element_text(size=18,lineheight=.8, face="bold"))
+
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Age vs HPF in EoE"}
+ggplot(PatientsWithEoE) + 
+  geom_point(aes(Ages, PatientsWithEoE$HPF, color = "red"),size=10)+
+  labs(title="Age vs hpf", x="Age", y="Max Eosinophils/hpf") +
+  theme(axis.text=element_text(size=25)) +
+  theme(axis.title=element_text(size=30))+
+  theme(legend.position = "none")+
+  theme(plot.title = element_text(size=18,lineheight=.8, face="bold"))
+
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Number of oesophageal biopsies in EoE"}
+qplot(PatientsWithEoE$NumbOfBx)+
+  labs(title="Number of oesophageal biopsies for patients with EoE ", x="Number of biopsies", y="Freq") +
+  theme(axis.text=element_text(size=25)) +
+  theme(axis.title=element_text(size=30))+
+  theme(legend.position = "none")+
+  theme(plot.title = element_text(size=18,lineheight=.8, face="bold"))
+
+```
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Table 1: Sensitivity and Specificity of Barium Swallow for 'dysmotility (spastic disorders only)' as measured by HRM within 1 year of the barium swallow"}
+
+knitr::kable(EoEHistol, digits = 5)
+```

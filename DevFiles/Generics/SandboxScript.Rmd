@@ -1,0 +1,156 @@
+---
+title: "A good workman blames his tools. Understanding the contribution of endoscope model to the adenoma detection rate for experienced endoscopists"
+author: "Sebastian Zeki PhD"
+date: "27 June 2017"
+output: word_document
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+library(readxl)
+######################################### Data acquisiton######################################### 
+final.df<-read_excel("S:\\Gastroenterology\\Seb\\R\\Data\\SelfAudit\\OrigEndoscopyFrom2007ToApr1_2017//GSTT_TCR2232_AllEndoscopyProcedure_since_2007.xlsx")
+
+######################################### Data merging######################################### 
+#setwd("S:\\Gastroenterology\\Seb\\R\\Data\\SelfAudit\\OrigEndoscopyFrom2007ToApr1_2017")
+#filenames <- list.files(pattern=".xlsx")
+#library(plyr)
+#df.list <- lapply(filenames, function(x) read.xlsx(x, sheet = 1, startRow = 1, colNames = TRUE))
+#final.df <- rbind.fill(df.list)
+
+
+
+
+
+######################################### Data cleaning######################################### 
+source("S:\\Gastroenterology\\Seb\\R\\Scripts\\Generics\\CleanUp.R")
+names(final.df)<-c("PatientID",  "NHSno", "PatientName", "birthdaynum","birthmonthnum" ,"birthyearnum" ,"Endo_ResultName", "Endo_ResultPerformed", "Endo_ResultEntered", "Endo_ResultText", "Histo_ResultName", "Histo_ResultPerformed", "Histo_ResultEntered", "Histo_ResultText")
+
+final.df<-final.df[1:14]
+final.df$Endo_ResultPerformed<-as.Date(final.df$Endo_ResultPerformed)
+final.df$Endo_ResultEntered<-as.Date(final.df$Endo_ResultEntered)
+final.df$Histo_ResultPerformed<-as.Date(final.df$Histo_ResultPerformed)
+final.df$Histo_ResultEntered<-as.Date(final.df$Histo_ResultEntered)
+
+                                       ######################################### Data accordionisation#########################################
+
+final.df<-EndoscChopper(final.df)
+final.df<-HistolChopper(final.df)
+
+detach("package:plyr")
+
+
+######################################### Data forking (filtering and subsetting)######################################### 
+#1. All Filters should be numeric nrows and start with the term Fil_ appended to the nrow from which it is derived eg mydf becomes Fil_mydf<-nrow(mydf)
+#Also need the original dataset that it comes from so data lineage is maintained
+#Parent
+Fil_final.df<-nrow(final.df)
+
+#Children
+OGDfinal.df<-final.df[grepl("Gastroscopy",final.df$ProcPerformed),]
+Fil_OGDfinal.df<-nrow(OGDfinal.df)
+
+Colonfinal.df<-final.df[grepl("Colonoscopy",final.df$ProcPerformed),]
+Fil_Colonfinal.df<-nrow(Colonfinal.df)
+
+ERCPfinal.df<-final.df[grepl("ERCP",final.df$ProcPerformed),]
+Fil_ERCPfinal.df<-nrow(ERCPfinal.df)
+
+EUSfinal.df<-final.df[grepl("EUS",final.df$ProcPerformed),]
+Fil_EUSfinal.df<-nrow(EUSfinal.df)
+
+Sigmoidoscopyfinal.df<-final.df[grepl("Sigmoidoscopy",final.df$ProcPerformed),]
+Fil_Sigmoidoscopyfinal.df<-nrow(Sigmoidoscopyfinal.df)
+```
+
+
+
+######## Introduction
+
+The adenoma detection rate (ADR) is a crucial component when assessing the skill of an endoscopist. The rate is attributed to an individual endoscopist and reflects a composite of various techniques that the endoscopist employs such as withdrawl time, use of endocuff etc. However the endoscope used has not been assessed.
+
+######## Aim
+<http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+  
+  ## Method---Can I extract the comments from an r script to 
+  #Data acquisition, cleaning and filtration goes here
+  
+  Data was acquired from retrospectively from hospital records. `r 1+1` (#Filter 1 here) barium swallow reports were analysed. High resolution manometry reports were then acquired and cross referenced with the barium swallow reports. (#Filter 2 here) HRM's with a barium study within 1 year of the barium were retained. Fundoplication and post therapy patients were excluded from the analysis. 
+
+
+######################################### Data analysis######################################### 
+    ```{r}
+#Diseases of interest
+numOGD<-nrow(OGDfinal.df)
+CMV<-OGDfinal.df[grepl("[Cc]ytomeg|CMV",OGDfinal.df$DxRaw),]
+(nrow(CMV)/(numOGD))*100
+HSV<-OGDfinal.df[grepl("[Hh]erpes",OGDfinal.df$DxRaw),]
+(nrow(HSV)/(numOGD))*100
+Candid<-OGDfinal.df[grepl("[Cc]andid",OGDfinal.df$DxRaw),]
+(nrow(Candid)/(numOGD))*100
+Barr<-OGDfinal.df[grepl("[Bb]arr",OGDfinal.df$DxRaw),]
+(nrow(Barr)/(numOGD))*100
+EoE<-OGDfinal.df[grepl("[Ee]osinop",OGDfinal.df$DxRaw),]
+(nrow(EoE)/(numOGD))*100
+```
+
+    
+########################################### FILTER DOCUMENTATION #########################################
+
+
+
+#Always start the filter with the data source document
+
+```{r echo=FALSE}
+
+    
+library(DiagrammeR)
+    #Create the labels for the DiagrammeR plot: Always append Lab_ prior to using the filter value eg Lab_Fil_OGD<-paste("The filter",Fil_OGD, sep = ": ")
+    #Lab_Fil_Data1<-paste("The filter",Fil_Data1, sep = ": ")
+    #Lab_Fil_Data2<-paste("The filter",Fil_Data2, sep = ": ")
+    #Lab_Fil_Data3<-paste("The filter",Fil_Data3, sep = ": ")
+    
+    Lab_Fil_All.df<-paste("All",Fil_All.df, sep = ": ")
+    Lab_Fil_OesophLab<-paste("OesophLab",Fil_OesophLab.df, sep = ": ")
+Lab_Fil_Source<-"S:\\Gastroenterology\\Seb\\R\\Data\\PhysiologyHuddleData\\PhysiologyHuddleRetroSpec_AttendancesFromOP17P_BO_Report.xls"
+   
+    
+    nodes <- create_nodes(nodes = c(Lab_Fil_Source,Lab_Fil_All.df,Lab_Fil_OesophLab),                     
+                          label = TRUE,
+                          fontsize = 55,
+                          fontcolour = "White",
+                          type = "lower",
+                          style = "filled",
+                          color = "aqua",
+                          shape = c("circle"),
+                          x = c(0,0,0,0,0),
+                          y = c(600,300,0,-300,-600,-900))
+    
+    #This is the complicated part as you have to tie the labels up together
+    edges <- create_edges(from = c(Lab_Fil_Source,Lab_Fil_All.df), 
+                          to = c(Lab_Fil_All.df,Lab_Fil_OesophLab),
+                          #rel = c(nrow(MyBariumDataAll), nrow(MyBariumDataSwall), nrow(MyBariumDataWithHRMAny), nrow(MyBariumDataWithHRMD)),
+                          arrowhead = rep("normal", 60),
+                          # color = c("red", "red", "red", "red", "red", "red"),
+                          length = c(500,200,50,50),
+                          fontsize = 55)
+```
+
+####What about adding the dataframe to the value that gets generated from code depends to automate a Sankey plot?
+
+
+
+
+    
+########################################### CODE DOCUMENTATION ############################################
+```{r echo=FALSE}
+
+library(CodeDepends)
+sc = readScript("S:\\Gastroenterology\\Seb\\R\\Scripts\\Generics\\SandboxScript.Rmd")
+g = makeVariableGraph( info =getInputs(sc))
+if(require(Rgraphviz))
+  plot(g)
+
+```

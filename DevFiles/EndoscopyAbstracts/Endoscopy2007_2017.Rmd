@@ -1,0 +1,262 @@
+---
+title: "A good workman blames his tools. Understanding the contribution of endoscope model to the adenoma detection rate for experienced endoscopists"
+author: "Sebastian Zeki PhD"
+date: "27 June 2017"
+output: word_document
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+library(readxl)
+######################################### Data acquisiton######################################### 
+final.df<-read_excel("S:\\Gastroenterology\\Seb\\R\\Data\\AdHoc//GSTT_GastroscopyProcedure2007_2017.xlsx")
+
+######################################### Data merging######################################### 
+#setwd("S:\\Gastroenterology\\Seb\\R\\Data\\SelfAudit\\OrigEndoscopyFrom2007ToApr1_2017")
+#filenames <- list.files(pattern=".xlsx")
+#library(plyr)
+#df.list <- lapply(filenames, function(x) read.xlsx(x, sheet = 1, startRow = 1, colNames = TRUE))
+#final.df <- rbind.fill(df.list)
+
+
+
+
+
+######################################### Data cleaning######################################### 
+source("S:\\Gastroenterology\\Seb\\R\\Scripts\\Generics\\CleanUp.R")
+names(final.df)<-c("PatientID",  "NHSno", "PatientName", "birthdaynum","birthmonthnum" ,"birthyearnum" ,"Endo_ResultName", "Endo_ResultPerformed", "Endo_ResultEntered", "Endo_ResultText", "Histo_ResultName", "Histo_ResultPerformed", "Histo_ResultEntered", "Histo_ResultText")
+
+final.df<-final.df[1:14]
+final.df$Endo_ResultPerformed<-as.Date(final.df$Endo_ResultPerformed)
+final.df$Endo_ResultEntered<-as.Date(final.df$Endo_ResultEntered)
+final.df$Histo_ResultPerformed<-as.Date(final.df$Histo_ResultPerformed)
+final.df$Histo_ResultEntered<-as.Date(final.df$Histo_ResultEntered)
+final.df<-data.frame(final.df)
+the_end<-nrow(final.df)
+                                       ######################################### Data accordionisation#########################################
+tryoutTBB<-final.df
+
+#Had to split up and rebind as the data set is too big for the endoscopy function
+final.df1<-EndoscChopper(final.df[1:20000,])
+final.df2<-EndoscChopper(final.df[20001:40000,])
+final.df3<-EndoscChopper(final.df[40001:60000,])
+final.df4<-EndoscChopper(final.df[60001:80000,])
+final.df5<-EndoscChopper(final.df[80001:100000,])
+final.df6<-EndoscChopper(final.df[100001:the_end,])
+final.df<-rbind(final.df1,final.df2)
+final.df<-rbind(final.df,final.df3)
+final.df<-rbind(final.df,final.df4)
+final.df<-rbind(final.df,final.df5)
+final.df<-rbind(final.df,final.df6)
+
+#Get rid of pointless objects
+rm(final.df1, final.df2, final.df3,final.df4)
+
+
+final.df<-HistolChopper(final.df)
+
+detach("package:plyr")
+
+
+######################################### Data forking (filtering and subsetting)######################################### 
+#1. All Filters should be numeric nrows and start with the term Fil_ appended to the nrow from which it is derived eg mydf becomes Fil_mydf<-nrow(mydf)
+#Also need the original dataset that it comes from so data lineage is maintained
+#Parent
+Fil_final.df<-nrow(final.df)
+
+#Children
+OGDfinal.df<-final.df[grepl("Gastroscopy|Other",final.df$ProcPerformed),]
+Fil_OGDfinal.df<-nrow(OGDfinal.df)
+  #Grandchildren
+  #BarrettsSurveillance
+BarrettSurveillance<-OGDfinal.df[grepl("Surveillance",OGDfinal.df$IndicationsFroExamination),]
+  
+  #Eosinophilic Oesophagitis
+Eosinoph<-OGDfinal.df[grepl("[Ee]osinoph",OGDfinal.df$Dx_Simplified),]
+   
+                #Great_Grandchildren
+                Eosinoph_Dysphagia<-Eosinoph[grepl("Dysphagia",Eosinoph$IndicationsFroExamination),]
+Colonfinal.df<-final.df[grepl("Colonoscopy",final.df$ProcPerformed),]
+Fil_Colonfinal.df<-nrow(Colonfinal.df)
+
+ERCPfinal.df<-final.df[grepl("ERCP",final.df$ProcPerformed),]
+Fil_ERCPfinal.df<-nrow(ERCPfinal.df)
+
+EUSfinal.df<-final.df[grepl("EUS",final.df$ProcPerformed),]
+Fil_EUSfinal.df<-nrow(EUSfinal.df)
+
+Sigmoidoscopyfinal.df<-final.df[grepl("Sigmoidoscopy",final.df$ProcPerformed),]
+Fil_Sigmoidoscopyfinal.df<-nrow(Sigmoidoscopyfinal.df)
+```
+
+
+#Script organised according to the cornerstones of gastro data science:
+
+#Surveillance by 
+
+```{r setup, include=FALSE}
+
+library(dplyr)
+library(lubridate)
+library(stringr)
+######## All endoscopies for proportions #############
+
+AllOGD_Dysphagia_OverTime<-OGDfinal.df %>% filter(str_detect(IndicationsFroExamination, 'Dysphagia'))
+#As unique patients
+MyFirstEndoscopy_AllDysphagics<-AllOGD_Dysphagia_OverTime %>%
+  group_by(PatientID) %>%
+  arrange(Endo_ResultEntered) %>%
+  filter(row_number()==1)%>% 
+  group_by(year=year(Endo_ResultEntered)) %>% 
+  summarise(Number=n())
+#Then group by year
+MyFirstEndoscopy_AllDysphagics<-MyFirstEndoscopy_AllDysphagics[!is.na(MyFirstEndoscopy_AllDysphagics),]
+
+######## Surveillance Barretts######## 
+
+#Get overall number of endoscopies being performed by year:
+
+#1. Barrett's surveillance- How many are we doing per month since 2007?
+SurveillanceOverTime<-BarrettSurveillance %>% group_by(year=year(Endo_ResultEntered)) %>% summarise(Number=n())
+
+library(ggplot2)
+ SurveillanceOverTimePlot<-ggplot(SurveillanceOverTime,aes(year,Number))+
+geom_bar(stat="identity")
+
+######## Eosinophilic Oesophagitis######## 
+EoE<-Eosinoph_Dysphagia %>% group_by(year=year(Endo_ResultEntered)) %>% summarise(Number=n())
+
+#GGplot here to show overall burden on endoscopy
+ EoEOverTimePlot<-ggplot(EoE,aes(year,Number))+
+geom_bar(stat="identity")
+
+#Individual patients with EoE ggplot:
+#Get their first endoscopy here:
+MyFirstEoEEndoscopy<-Eosinoph_Dysphagia %>%
+  group_by(PatientID) %>%
+  arrange(Endo_ResultEntered) %>%
+  filter(row_number()==1)%>% 
+  group_by(year=year(Endo_ResultEntered)) %>% 
+  summarise(Number=n())
+
+MyFirstEoEEndoscopy$year<-as.character(MyFirstEoEEndoscopy$year)
+library(scales)
+EoEOverTimePlot<-ggplot(MyFirstEoEEndoscopy,aes(year,Number))+
+geom_bar(stat="identity")+
+  theme_bw() +
+  labs(title="Individual patients with eosinophilic eosophagitis with dysphagia as the endoscopic indication") +
+  labs(x = "Year", y = "Number of patients (unique)") 
+
+
+#Do as proportions of all dysphagics:
+#Get rid of 2007 so EoE and AllOGD_Dysphagia_OverTime can have cbind
+AllOGD_Dysphagia_OverTimev2<-MyFirstEndoscopy_AllDysphagics[!MyFirstEndoscopy_AllDysphagics$year==2007,]
+
+#Do the cbind
+PropEoE<-merge(MyFirstEoEEndoscopy,AllOGD_Dysphagia_OverTimev2,by=c("year"))
+names(PropEoE)<-c("year","NumberEoE","NumberAllDysphagia")
+PropEoE$Prop<-(PropEoE$NumberEoE/PropEoE$NumberAllDysphagia)*100
+
+PropEoE$year<-as.character(PropEoE$year)
+EoEOverTimePlot<-ggplot(PropEoE,aes(year,Prop))+
+geom_bar(stat="identity")+
+  theme_bw() +
+  labs(title="% of unique patients with dysphagia who have eosinophilic eosophagitis (with dysphagia as the endoscopic indication; EoE as >15eosinophils/hpf") +
+  labs(x = "Year", y = "% of all dysphagia patients") 
+
+
+```
+
+######## Quality ######## 
+
+######## Yield ######## 
+
+
+
+
+
+######## Aim
+<http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+  
+  ## Method---Can I extract the comments from an r script to 
+  #Data acquisition, cleaning and filtration goes here
+  
+  Data was acquired from retrospectively from hospital records. `r 1+1` (#Filter 1 here) barium swallow reports were analysed. High resolution manometry reports were then acquired and cross referenced with the barium swallow reports. (#Filter 2 here) HRM's with a barium study within 1 year of the barium were retained. Fundoplication and post therapy patients were excluded from the analysis. 
+
+
+######################################### Data analysis######################################### 
+    ```{r}
+#Diseases of interest
+numOGD<-nrow(OGDfinal.df)
+CMV<-OGDfinal.df[grepl("[Cc]ytomeg|CMV",OGDfinal.df$DxRaw),]
+(nrow(CMV)/(numOGD))*100
+HSV<-OGDfinal.df[grepl("[Hh]erpes",OGDfinal.df$DxRaw),]
+(nrow(HSV)/(numOGD))*100
+Candid<-OGDfinal.df[grepl("[Cc]andid",OGDfinal.df$DxRaw),]
+(nrow(Candid)/(numOGD))*100
+Barr<-OGDfinal.df[grepl("[Bb]arr",OGDfinal.df$DxRaw),]
+(nrow(Barr)/(numOGD))*100
+EoE<-OGDfinal.df[grepl("[Ee]osinop",OGDfinal.df$DxRaw),]
+(nrow(EoE)/(numOGD))*100
+```
+
+    
+########################################### FILTER DOCUMENTATION #########################################
+
+
+
+#Always start the filter with the data source document
+
+```{r echo=FALSE}
+
+    
+library(DiagrammeR)
+    #Create the labels for the DiagrammeR plot: Always append Lab_ prior to using the filter value eg Lab_Fil_OGD<-paste("The filter",Fil_OGD, sep = ": ")
+    #Lab_Fil_Data1<-paste("The filter",Fil_Data1, sep = ": ")
+    #Lab_Fil_Data2<-paste("The filter",Fil_Data2, sep = ": ")
+    #Lab_Fil_Data3<-paste("The filter",Fil_Data3, sep = ": ")
+    
+    Lab_Fil_All.df<-paste("All",Fil_All.df, sep = ": ")
+    Lab_Fil_OesophLab<-paste("OesophLab",Fil_OesophLab.df, sep = ": ")
+Lab_Fil_Source<-"S:\\Gastroenterology\\Seb\\R\\Data\\PhysiologyHuddleData\\PhysiologyHuddleRetroSpec_AttendancesFromOP17P_BO_Report.xls"
+   
+    
+    nodes <- create_nodes(nodes = c(Lab_Fil_Source,Lab_Fil_All.df,Lab_Fil_OesophLab),                     
+                          label = TRUE,
+                          fontsize = 55,
+                          fontcolour = "White",
+                          type = "lower",
+                          style = "filled",
+                          color = "aqua",
+                          shape = c("circle"),
+                          x = c(0,0,0,0,0),
+                          y = c(600,300,0,-300,-600,-900))
+    
+    #This is the complicated part as you have to tie the labels up together
+    edges <- create_edges(from = c(Lab_Fil_Source,Lab_Fil_All.df), 
+                          to = c(Lab_Fil_All.df,Lab_Fil_OesophLab),
+                          #rel = c(nrow(MyBariumDataAll), nrow(MyBariumDataSwall), nrow(MyBariumDataWithHRMAny), nrow(MyBariumDataWithHRMD)),
+                          arrowhead = rep("normal", 60),
+                          # color = c("red", "red", "red", "red", "red", "red"),
+                          length = c(500,200,50,50),
+                          fontsize = 55)
+```
+
+####What about adding the dataframe to the value that gets generated from code depends to automate a Sankey plot?
+
+
+
+
+    
+########################################### CODE DOCUMENTATION ############################################
+```{r echo=FALSE}
+
+library(CodeDepends)
+sc = readScript("S:\\Gastroenterology\\Seb\\R\\Scripts\\Generics\\SandboxScript.Rmd")
+g = makeVariableGraph( info =getInputs(sc))
+if(require(Rgraphviz))
+  plot(g)
+
+```
