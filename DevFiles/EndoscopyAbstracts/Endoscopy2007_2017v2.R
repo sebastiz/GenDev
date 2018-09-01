@@ -57,3 +57,5 @@ Self<-EndoscProcPerformed(Self,'PROCEDUREPERFORMED')
 Self<-HistolHistol(Self,'HISTOLOGY')
 Self<-HistolDx(Self,"DIAGNOSIS")
 Self<-HistolExtrapolDx(Self,"DIAGNOSIS")
+
+HowManyTests(Self,'DIAGNOSIS','DateofProcedure','')
