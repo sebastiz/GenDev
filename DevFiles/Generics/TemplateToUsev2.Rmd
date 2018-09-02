@@ -1,8 +1,7 @@
-#STROBE document for the templating of observational trials cross-sectional/case-control and cohort studies:
+<!-- #STROBE document for the templating of observational trials cross-sectional/case-control and cohort studies:-->
 
 
-#STROBE Statement—checklist of items that should be included in reports of observational studies
-
+<!-- 
 
 #Title and abstract
 #(a) Indicate the study’s design with a commonly used term in the title or the abstract
@@ -28,8 +27,20 @@
 #study designs. Therefore, we recommend including that the study
 #was observational and, if possible, the study design or important
 #design characteristics, for example longitudinal, in the title.
+-->
 
+---
+title: "TemplateToUse"
+author: "Sebastian Zeki"
+date: "02/09/2018"
+output: pdf_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!--
 #(b). Indicate why the study was conducted, 
 #the approach, 
 #the results, 
@@ -38,78 +49,65 @@
 
 
 #Example
-#Methicillin-resistant Staphylococcus pseudintermedius
-#(MRSP) has emerged as a highly drug-resistant small animal
-#veterinary pathogen. Although often isolated from
-#outpatients in veterinary clinics, there is concern that
-#MRSP follows a veterinary-hospital associated epidemiology.
-#This study’s objective was to identify risk factors for
-#MRSP infections in dogs and cats in Germany. Clinical
-#isolates of MRSP cases (n = 150) and methicillin-susceptible
-#S. pseudintermedius (MSSP) controls (n = 133) and
-#their corresponding host signalment and medical data
-#covering the six months prior to staphylococcal isolation
-#were analysed by multivariable logistic regression. The
-#identity of all MRSP isolates was confirmed through
-#demonstration of S. intermedius-group specific nuc and
-#mecA. In the final model, cats (compared to dogs, OR
-#18.5, 95% CI 1.8–188.0, P = 0.01), animals that had been
-#hospitalised (OR 104.4, 95% CI 21.3–511.6, P < 0.001),
-#or visited veterinary clinics more frequently (>10 visits
-#OR 7.3, 95% CI 1.0–52.6, P = 0.049) and those that had
-#received topical ear medication (OR 5.1, 95% CI 1.8–
-#14.9, P = 0.003) or glucocorticoids (OR 22.5, 95% CI
-#7.0–72.6, P < 0.001) were at higher risk of MRSP infection,
-#whereas S. pseudintermedius isolates from ears were
-#more likely to belong to the MSSP group (OR 0.09, 95%
-#CI 0.03–0.34, P < 0.001). These results indicate an
-#association of MRSP infection with veterinary clinic/hospital
-#settings and possibly with chronic skin disease.
-#There was an unexpected lack of association between
-#MRSP and antimicrobial therapy; this requires further investigation .(Lehner et al., 2014).
+Sentence 1: Methicillin-resistant Staphylococcus pseudintermedius (MRSP) has emerged as a highly drug-resistant small animal
+#veterinary pathogen. 
+
+Sentence 2:Although often isolated from outpatients in veterinary clinics, there is concern that
+#MRSP follows a veterinary-hospital associated epidemiology. 
+
+Aim: This study’s objective was to identify risk factors for
+#MRSP infections in dogs and cats in Germany. 
+
+Approach: Clinical isolates of MRSP cases (n = 150) and methicillin-susceptible
+#S. pseudintermedius (MSSP) controls (n = 133) and their corresponding host signalment and medical data
+#covering the six months prior to staphylococcal isolation were analysed by multivariable logistic regression. The
+#identity of all MRSP isolates was confirmed through demonstration of S. intermedius-group specific nuc and
+#mecA. 
+
+Results: In the final model, cats (compared to dogs, OR 18.5, 95% CI 1.8–188.0, P = 0.01), animals that had been
+#hospitalised (OR 104.4, 95% CI 21.3–511.6, P < 0.001), or visited veterinary clinics more frequently (>10 visits
+#OR 7.3, 95% CI 1.0–52.6, P = 0.049) and those that had received topical ear medication (OR 5.1, 95% CI 1.8–
+#14.9, P = 0.003) or glucocorticoids (OR 22.5, 95% CI 7.0–72.6, P < 0.001) were at higher risk of MRSP infection,
+#whereas S. pseudintermedius isolates from ears were more likely to belong to the MSSP group (OR 0.09, 95%
+#CI 0.03–0.34, P < 0.001). 
+
+Conclusions: These results indicate an association of MRSP infection with veterinary clinic/hospital
+#settings and possibly with chronic skin disease. 
+
+LimitationsThere was an unexpected lack of association between MRSP and antimicrobial therapy; this requires further investigation .(Lehner et al., 2014).
 
 #Explanation
-#The abstract provides key information that enables readers
-#to understand the key aspects of the study and decide
-#whether to read the article. In STROBE, item 1b recommended
-#that authors provide an informative and balanced
-#summary of what experiments were done, what results were
-#found and the implications of the findings in the abstract.
-#In STROBE-Vet, this item was modified to provide more
-#guidance on the key components that should be addressed.
-#The study design should be stated; however, if the study
-#does not correspond to a named study design such as case–
-#control, cross-sectional and cohort study, then the author
-#should describe the key elements of the study design such
-#as incident versus prevalent cases, and whether or not the
-#selection was based on outcome status (Pearce, 2012). The
-#abstract should succinctly describe the study objectives,
-#including the primary objective and primary outcome, the
-#exposure(s) of interest, relevant population information
-#such as species and the purpose (or uses) of the animals,
-#the study location and dates, and the number of study
-#units. In addition, including the organizational level at
-#which the outcome was measured (e.g. herd, pen or individual)
-#is recommended. The presented results should
-#include summary outcome measures (e.g. frequency or
-#appropriate descriptor of central tendency such as mean or
-#median) and, if relevant, a clear description of the association
-#direction along with accompanying association measures
-#(e.g. odds ratio) and measures of precision (e.g. 95%
-#confidence interval) rather than P-value alone. We discourage
-#stating that an exposure is or is not significantly associated
-#with an outcome without appropriate statistical
-#measures. Finally, because many veterinary observational
-#studies evaluate multiple potential risk factors, the abstract
-#should provide the number of exposure–outcome associations
-#tested to alert the end-user to potential type I error in
-#the study. When multiple outcomes are observed, provide
-#the reader with a rationale for the outcomes presented in
-#the abstract, for example only statistically significant results
-#or the outcome of the primary hypothesis is presented.
+#The abstract provides key information that enables readers to understand the key aspects of the study and decide
+#whether to read the article. In STROBE, item 1b recommended that authors provide an informative and balanced
+#summary of what experiments were done, what results were found and the implications of the findings in the abstract.
+#In STROBE-Vet, this item was modified to provide more guidance on the key components that should be addressed.
+#The study design should be stated; however, if the study does not correspond to a named study design such as case–
+#control, cross-sectional and cohort study, then the author should describe the key elements of the study design such
+#as incident versus prevalent cases, and whether or not the selection was based on outcome status (Pearce, 2012). The
+#abstract should succinctly describe the study objectives, including the primary objective and primary outcome, the
+#exposure(s) of interest, relevant population information such as species and the purpose (or uses) of the animals,
+#the study location and dates, and the number of study units. In addition, including the organizational level at
+#which the outcome was measured (e.g. herd, pen or individual)is recommended. The presented results should
+#include summary outcome measures (e.g. frequency orappropriate descriptor of central tendency such as mean or
+#median) and, if relevant, a clear description of the association direction along with accompanying association measures(e.g. odds ratio) and measures of precision (e.g. 95%
+#confidence interval) rather than P-value alone. We discourage stating that an exposure is or is not significantly associated with an outcome without appropriate statistical
+#measures. Finally, because many veterinary observationalstudies evaluate multiple potential risk factors, the abstract should provide the number of exposure–outcome associations
+#tested to alert the end-user to potential type I error in the study. When multiple outcomes are observed, provide
+#the reader with a rationale for the outcomes presented in the abstract, for example only statistically significant results or the outcome of the primary hypothesis is presented.
+-->
+
+## Abstract
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Abstract}
+summary(cars)
+```
 
 
---------------------------
+<!--
   ####Introduction####
 ##### 1.Background/rationale  ####
 #Explain the scientific background and rationale for the investigation being reported
@@ -138,12 +136,20 @@
 #note recent pertinent studies and any reviews of pertinent
 #studies. The background section should also include the
 #anticipated impact of the work.
+-->
 
 
 
+## Introduction-Background/rationale
 
-#####2.Objectives  #####
-#State specific objectives, including any prespecified hypotheses
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Introduction-Background_or_rationale}
+summary(cars)
+```
+<!--
 
 
 #2 (a). Objectives: state-specific objectives, including any primary or secondary pre-specified hypotheses or their absence
@@ -176,17 +182,19 @@
 #Explanation
 #A full explanation is provided in Box 4: Organization structures
 #in animal populations
+-->
 
---------------------------
+## Introduction-2.Objectives  
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-
-
---------------------------
-  ####Methods####
-
-####1. Study design####
+```{r Introduction-2Objectives }
+summary(cars)
+```
+<!--
+Methods-Study Design
 #Present key elements of study design early in the paper
 
 #Example
@@ -248,8 +256,17 @@
 #words, they define what they mean. Most importantly, we
 #recommend that authors describe exactly how and when
 #data collection took place.
+-->
+## Methods-Study design
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-StudyDesign}
+summary(cars)
+```
+<!--
 ####2. Setting ####
 #Describe the 
 #setting, 
@@ -282,8 +299,17 @@
 #confounders, diseases and study methods. Knowing when a study took place and over what period participants
 #were recruited and followed places the study in historical context and is important for the interpretation of results.
 
+-->
+## Methods-Setting
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-Setting}
+summary(cars)
+```
+<!--
 ####3. Participants ####
 #(a) Cohort study—Give the eligibility criteria, and the sources and methods of selection of participants. 
 
@@ -405,10 +431,17 @@
 #density sampling design. Example 2 provides a description
 #of a time-matched selection-control approach.
 
+-->
+## Methods-Participants
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-
+```{r Methods-Participants}
+summary(cars)
+```
+<!--
 ####4. Variables ####
 #Clearly define all outcomes, exposures, predictors, potential confounders, and effect modifiers. Give diagnostic criteria, if applicable
 #Example 1
@@ -452,8 +485,17 @@
 #involving follow-up, authors should describe how study
 #subjects were uniquely identified, allowing research personnel
 #to correctly record observations at follow-up visits.
+-->
+## Methods-Variables
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-Variables}
+summary(cars)
+```
+<!--
 ####5. Data sources/measurement####
 # For each variable of interest, give sources of data and details of methods of assessment (measurement). 
 #Describe comparability of assessment methods if there is more than one group
@@ -671,7 +713,17 @@
 #confounding as well as their impact on observational studies
 #is provided in Box 1: Bias in observational studies and
 #Box 5: Confounding .
+-->
+## Methods-Data sources/measurement
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-DataSources_or_measurement}
+summary(cars)
+```
+<!--
 ####7 Study size: ####
 #Describe how the study size was arrived
 #at for each relevant level of organization
@@ -814,9 +866,17 @@
 #those assumptions on the sample size. For example, what
 #constitutes a meaningful difference might vary between different
 #regions, and the assumed level of non-independence
-#can vary between populations.
+#can vary between populations.-->
+## Methods-Study size
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-StudySize}
+summary(cars)
+```
+<!--
 #####8. Quantitative variables:#### 
 #Explain how quantitative
 #variables were handled in the analyses. If applicable,
@@ -852,8 +912,17 @@
 #between the exposure and outcome (Greenland, 1995;
 #Royston et al., 1999, 2006). Also, it might be informative to
 #present both continuous and grouped analyses for a quantitative
-#exposure of prime interest.
+#exposure of prime interest.-->
+## Methods-Quantitative variables
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Methods-QuantitativeVariables}
+summary(cars)
+```
+<!--
 #####9. Statistical methods####
 
 #(a). Describe all statistical methods for each objective,
@@ -1060,14 +1129,18 @@
 #variables (see item 11). Sophisticated methods are
 #used increasingly to simultaneously model the influence of
 #several biases or assumptions (Greenland, 2003; Lash and
-#Fink, 2003; Phillips, 2003).
+#Fink, 2003; Phillips, 2003).-->
 
---------------------------
-  
-  
---------------------------
-    ####Results####
+## Methods-Statistical methods
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r MethodsStatisticalMethods}
+summary(cars)
+```
+<!--
 ####1.Participants####
 
 #(a) Report numbers of individuals at each stage of study—eg numbers potentially eligible, examined for eligibility, confirmed eligible, included in the study, completing follow-up, and analysed
@@ -1161,7 +1234,17 @@
 # might need to include information for both owners/managers
 # and animals as well as information at multiple organizational
 # levels, if applicable.
+-->
+## Results-1.Participants
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Results1_Participants}
+summary(cars)
+```
+<!--
 ####2.Descriptive data####
 #(a) Give characteristics of study participants (eg demographic, clinical, social) and information on exposures and potential confounders
 # Explanation
@@ -1268,10 +1351,17 @@
 # of follow-up or some indication of the proportion of
 # potential data that were captured (Clark et al., 2002). All
 # such information might be presented separately for animals
-# in two or more exposure categories.
---------------------------
-  
---------------------------
+# in two or more exposure categories.-->
+## Results-2.Descriptive data
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Results2Descriptive data}
+summary(cars)
+```
+<!--
 ####3.Outcome data####
 #Example 1
 #In the reduced dataset of 200 cats, 126 (63%) cats were classed
@@ -1366,11 +1456,17 @@
 #the median and interquartile range (or complete range) of the
 #original variable. In Example 3, the mean and SD as well as
 #the median and range have been presented.
+-->
+## Results-3.Outcome data
 
---------------------------
-  
---------------------------
-####4.Main results####
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Results-3Outcome data}
+summary(cars)
+```
+<!--####4.Main results####
 # 4 (a). Give unadjusted estimates and, if applicable,
 # adjusted estimates and their precision (e.g. 95% confidence interval). Make clear which
 # confounders and interactions were adjusted. Report
@@ -1491,7 +1587,17 @@
 # © 2016 688 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH  Zoonoses and Public Health, 2016, 63, 662–698
 # STROBE-Vet Explanation and Elaboration A. M. O’Connor et al.
 # the formulae used or a citation for the formula (Uter and Pfahlberg, 2001).
+-->
+## Results-4.Main results
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Results4Main results}
+summary(cars)
+```
+<!--
 ####5. Other analyses: ####
 # Report other analyses done, such asensitivity / robustness analysis and analysis of subgroups
 # Examples
@@ -1538,8 +1644,17 @@
 # these situations, it is also appropriate to examine and
 # report the sensitivity of the conclusions with respect to the
 # decision criteria used.
---------------------------
+-->
+## Results-5. Other analyses:
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Results-5Other analyses}
+summary(cars)
+```
+<!--
 ####Disussion####
 
 #####1. Summarize key results ####
@@ -1597,10 +1712,17 @@
 #of the main findings of the study. The short summary
 #reminds readers of the main findings and might help them
 #assess whether the subsequent interpretation and implications
-#offered by the authors are supported by the findings.
-#
-#
-#
+#offered by the authors are supported by the findings.-->
+## Disussion-1. Summarize key results 
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Disussion-1SummarizeKeyResults }
+summary(cars)
+```
+<!--
 #####2. Discuss strengths and limitations of the study##### 
 #taking into account sources of potential bias or imprecision.
 #Discuss both direction and magnitude of any potential
@@ -1655,8 +1777,17 @@
 #approach, each study can be viewed as a contribution to
 #the literature, not as a stand-alone basis for inference and
 #action (Poole et al., 2003).
+-->
+## Disussion-2. Discuss strengths and limitations of the study
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Disussion-2DiscussStrengths}
+summary(cars)
+```
+<!--
 #####3. Give a cautious overall interpretation of results####
 #considering objectives, limitations, multiplicity of
 #analyses, results from similar studies and other relevant
@@ -1720,7 +1851,17 @@
 #how the new study affects the existing body of evidence,
 #ideally by referring to a systematic review.
 #
+-->
+## Disussion-3. Give a cautious overall interpretation of results
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Disussion-3GiveACcautious}
+summary(cars)
+```
+<!--
 #####4. Discuss the generalizability (external validity) #####
 #of the study results
 
@@ -1764,11 +1905,17 @@
 #summary statements only serve as a reminder of the need
 #for complete reporting of research design and results in the
 #context of external validity (See Box 6: Measures of Association
-#and measures of impact.).
-#
-#####Other information####
-#####1. Transparency####
-# (a). Give the source of funding and the role of the
+#and measures of impact.).-->
+## Disussion-4. Discuss the generalizability (external validity) 
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Disussion-4DiscussTheGeneralizability }
+summary(cars)
+```
+<!--# (a). Give the source of funding and the role of the
 #funders for the present study and, if applicable, for the
 #original study on which the present article is based
 #
@@ -1888,4 +2035,23 @@
 #example, laboratory or animal welfare accreditations indicate
 #that certain practices and quality control approaches
 #were followed, and this information can help end-users
-#assess bias.
+#assess bias.-->
+## Other information-1. Transparency
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r OtherInformation-1Transparency}
+summary(cars)
+```
+<!---->
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
