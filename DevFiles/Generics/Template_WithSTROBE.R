@@ -675,7 +675,7 @@
 #is provided in Box 1: Bias in observational studies and
 #Box 5: Confounding .
 
-####6 (a). Study size: ####
+####7 Study size: ####
 #Describe how the study size was arrived
 #at for each relevant level of organization
 #Example
@@ -820,7 +820,7 @@
 #can vary between populations.
 
 
-#####11. Quantitative variables:#### 
+#####8. Quantitative variables:#### 
 #Explain how quantitative
 #variables were handled in the analyses. If applicable,
 #describe which groupings were chosen, and why
@@ -857,7 +857,7 @@
 #present both continuous and grouped analyses for a quantitative
 #exposure of prime interest.
 
-#####12. Statistical methods####
+#####9. Statistical methods####
 #12 (a). Describe all statistical methods for each objective,
 #at a level of detail sufficient for a knowledgeable reader to
 #replicate the methods. Include a description of the
