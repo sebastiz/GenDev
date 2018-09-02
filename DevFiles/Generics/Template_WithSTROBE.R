@@ -30,7 +30,11 @@
 #design characteristics, for example longitudinal, in the title.
 
 
-#(b). Indicate why the study was conducted, the approach, the results, the limitations and the relevance of the findings
+#(b). Indicate why the study was conducted, 
+#the approach, 
+#the results, 
+#the limitations 
+#and the relevance of the findings.
 
 
 #Example
@@ -62,9 +66,8 @@
 #association of MRSP infection with veterinary clinic/hospital
 #settings and possibly with chronic skin disease.
 #There was an unexpected lack of association between
-#MRSP and antimicrobial therapy; this requires further
-#investigation . . ... (Lehner et al., 2014).
-#
+#MRSP and antimicrobial therapy; this requires further investigation .(Lehner et al., 2014).
+
 #Explanation
 #The abstract provides key information that enables readers
 #to understand the key aspects of the study and decide
@@ -114,18 +117,18 @@
 #Example
 #The syndesmochorial placenta of cattle prevents the bovine
 #fetus from receiving immunoglobulins in utero; therefore,
-#calves are born essentially agammaglobulinemic [].1 Calves
+#calves are born essentially agammaglobulinemic .1 Calves
 #acquire passive immunity by consuming colostrum in the
-#first 24 to 36 h of life []. Inadequate colostrum consumption
+#first 24 to 36 h of life . Inadequate colostrum consumption
 #leads to failure of passive transfer (FPT), which has detrimental
 #effects on calf health and survival. As many as 40% of dairy
-#calves experience FPT []. However, beef and dairy calf management
+#calves experience FPT . However, beef and dairy calf management
 #is considerably different, as beef calves generally remain
 #with the cow post-calving and nurse ad libitum, while dairy
 #producers often separate calves from their dams and then
 #provide the colostrum. Hence, the prevalence of and risk factors
 #for FPT in beef calves may vary substantially from those in
-#reports describing dairy calves. . ..’ (Waldner and Rosengren,
+#reports describing dairy calves..’ (Waldner and Rosengren,
 #2009).
 #Explanation
 #The scientific background provides important context for
@@ -146,9 +149,8 @@
 #and rationale for the investigation being reported.
 
 
-#2 (a). Objectives: state-specific objectives, including any
-#primary or secondary pre-specified hypotheses or their
-#absence
+#2 (a). Objectives: state-specific objectives, including any primary or secondary pre-specified hypotheses or their absence
+
 #Example
 #The objective of this study was to investigate the effect of
 #track way distance and cover on the probability for lameness
@@ -261,58 +263,34 @@
 
 
 #Example
-#This study was conducted in Afar and Tigray regions
-#in north-eastern Ethiopia. Two administrative zones
-#(Zone-1 and Zone-4) out of five zones of Afar region
-#were included in the study, and then one district from
-#each zone was selected (Asiyta and Yallo, respectively).
-#Asayita district was selected to include an agro-pastoral
-#production system where irrigation farming is widely
-#prevalent. . . . Yallo was selected for its location interfacing
-#with the highland agro-climate in Alamata and Raya
-#Azebo districts where the livestock are moved for grazing
-#and watering during dry season [ ]. There were two distinct
-#agro-ecological climates prevailing in the Afar study
-#area: lowland (<1500 m) and highland (>2300 m). . . .
-#A cross-sectional study was carried out between October
-#2011 and February 2012 to assess epidemiological factors
-#associated with observed [lumpy skin disease] in the previous
-#two years (September 2009 to October 2011). Three to
-#four Kebeles (the lowest administrative unit next to district
-#in order of hierarchy in Ethiopia) were selected randomly
-#from each district, and 20-30 herds were randomly selected
-#from each Kebele. Herd-owners were selected based on
-#willingness to complete the questionnaire (Hailu et al.,
-#2014).
+#This study was conducted in Afar and Tigray regions in north-eastern Ethiopia. Two administrative zones
+#(Zone-1 and Zone-4) out of five zones of Afar region were included in the study, and then one district from
+#each zone was selected (Asiyta and Yallo, respectively). Asayita district was selected to include an agro-pastoral
+#production system where irrigation farming is widely prevalent. . Yallo was selected for its location interfacing
+#with the highland agro-climate in Alamata and Raya Azebo districts where the livestock are moved for grazing
+#and watering during dry season [ ]. There were two distinct agro-ecological climates prevailing in the Afar study
+#area: lowland (<1500 m) and highland (>2300 m). .
+#A cross-sectional study was carried out between October 2011 and February 2012 to assess epidemiological factors
+#associated with observed [lumpy skin disease] in the previous two years (September 2009 to October 2011). Three to
+#four Kebeles (the lowest administrative unit next to district in order of hierarchy in Ethiopia) were selected randomly
+#from each district, and 20-30 herds were randomly selected from each Kebele. Herd-owners were selected based on
+#willingness to complete the questionnaire (Hailu et al.,2014).
+
 #Explanation
-#Readers must understand the clinical, demographic,
-#managerial, geographic and temporal contexts in which
-#the study was conducted, so readers will be able to
-#determine the populations to which the study’s inferences
-#can be applied. Data from research herds or kennels
-#might not extrapolate to commercial or home
-#settings. Dates are required to understand the historical
-#context of the research, because medical, sociological
-#and agricultural practices can change over time, which,
-#in turn, can affect the prevalence of risk factors, potential
-#confounders, diseases and study methods. Knowing
-#when a study took place and over what period participants
-#were recruited and followed places the study in
-#historical context and is important for the interpretation
-#of results.
+#Readers must understand the clinical, demographic, managerial, geographic and temporal contexts in which
+#the study was conducted, so readers will be able to determine the populations to which the study’s inferences
+#can be applied. Data from research herds or kennels might not extrapolate to commercial or home
+#settings. Dates are required to understand the historical context of the research, because medical, sociological
+#and agricultural practices can change over time, which, in turn, can affect the prevalence of risk factors, potential
+#confounders, diseases and study methods. Knowing when a study took place and over what period participants
+#were recruited and followed places the study in historical context and is important for the interpretation of results.
 
 
 
 ####3. Participants ####
 #(a) Cohort study—Give the eligibility criteria, and the sources and methods of selection of participants. 
-#Describe methods of follow-up
-#Case-control study—Give the eligibility criteria, and the sources and methods of case ascertainment and control selection. 
-#Give the rationale for the choice of cases and controls
-#Cross-sectional study—Give the eligibility criteria, and the sources and methods of selection of participants
 
 
-#(b) Cohort study—For matched studies, give matching criteria and number of exposed and unexposed
-#Case-control study—For matched studies, give matching criteria and the number of controls per case
 
 #Example
 #Counties were chosen based on the proportion of registered
@@ -341,92 +319,1574 @@
 
 
 
+#Describe methods of follow-up
+
+#Example 1
+#After surgery, the owners of the dogs were instructed to
+#monitor for any signs of new mammary tumors and notify
+#the principal investigator (PI) if any signs of recurrence or
+#new tumors were noted. In addition, they were contacted
+#by the PI (VK) every 6 months through phone to ensure
+#this information. . Dogs with reported/ suspected new
+#tumors were requested to return for clinical examination
+#and confirmation (Kristiansen et al., 2013).
+#Explanation
+#The potential for loss to follow-up differs between studies;
+#therefore, follow-up monitoring approaches might differ
+#between studies. For example, companion animal populations
+#that rely on client return visits are prone to loss to follow-
+#  up, analogous to the human population studies
+#discussed in STROBE. The authors of these studies often
+#make several attempts to contact animal owners to determine
+#their pet’s outcome. In other animal populations,
+#data might be collected from computerized systems, such
+#as herd inventory at the start and end of the study, where
+#relevant records (e.g. the reasons for losses) might or might
+#not be available. Reporting the approach used by the
+#authors to minimize loss to follow-up will allow users to
+#assess the potential for bias related to this loss.
+
+
+#Case-control study—Give the eligibility criteria, and the sources and methods of case ascertainment and control selection. 
+#Give the rationale for the choice of cases and controls
+#Cross-sectional study—Give the eligibility criteria, and the sources and methods of selection of participants
+
+
+#(b) Cohort study—For matched studies, give matching criteria and number of exposed and unexposed
+#Case-control study—For matched studies, give matching criteria and the number of controls per case
+
+#Example 1
+#Two to 4 control farms matched to each case farm on the
+#basis of type of farm (dairy or beef) and location (inside or
+#outside the TB core area) were included in the study.
+#(Kaneene et al., 2002)
+#Example 2
+#Each time a herd was recorded as a “case,” a randomly
+#selected at-risk herd was identified as a “control”. Each
+#control herd was selected with probability proportional to
+#their time at risk (incidence density sampling) during the
+#study period. (Olea-Popelka et al., 2006).
+#Explanation
+#Matching is more common in case–control studies, but
+#occasionally, investigators use matching in cohort studies.
+#Matching in cohort studies makes groups directly
+#comparable for potential confounders (Box 5: Confounding)
+#and presents fewer intricacies than with case–control
+#studies. For example, it is not necessary to take the
+#matching into account for the estimation of the relative
+#risk. Because matching in cohort studies might increase
+#statistical precision, investigators might allow for the
+#matching in their analyses and thus obtain narrower
+#confidence intervals.
+#In case–control studies, matching is done to increase a
+#study’s efficiency by ensuring similarity in the distribution
+#of variables between cases and controls, in particular the
+#distribution of potential confounding variables (Costanza,
+#1995; Sturmer and Brenner, 2002). Example 1 illustrates
+#this type of matching description by matching on farm type
+#and location. Because matching can be done in various
+#ways, with one or more controls per case, the rationale for
+#the choice of matching variables and the details of the
+#method used should be described. Commonly used forms
+#of matching are frequency matching (also called group
+#matching) and individual matching. In frequency matching,
+#investigators choose controls so that the distribution of
+#matching variables becomes identical or similar to that of
+#cases. Individual matching involves matching one or several
+#controls to each case. Matching is not always appropriate
+#in case–control studies, but if used, it needs to be taken into
+#account in the analysis (see Box 2: Matching in case–control
+#studies).
+#While matching is generally considered to be based on
+#potentially confounding population characteristics, in some
+#case–control studies, the term matching is also used to
+#describe a means of controlling selection from the risk set
+#based on the case occurrence timing such as in an incidence
+#density sampling design. Example 2 provides a description
+#of a time-matched selection-control approach.based on the case 
+#occurrence timing such as in an incidence
+#density sampling design. Example 2 provides a description
+#of a time-matched selection-control approach.
+
+
+
+
 
 ####4. Variables ####
 #Clearly define all outcomes, exposures, predictors, potential confounders, and effect modifiers. Give diagnostic criteria, if applicable
+#Example 1
+#.the explanatory variable of interest was IBK status. Other
+#explanatory variables included in each model as potential
+#effect modifiers or confounders of the association between
+#IBK and weight at ultrasonographic evaluation were birth
+#weight, season, sex of calves after weaning (bull, heifer, or
+#steer), ADG (weaning to yearling weight), preweaning
+#management group, postweaning management group, year
+#of calving, season of calving, the interaction between year
+#and season, and age at ultrasonographic evaluation (Funk
+#et al., 2014).
+#Example 2
+#Refer to Section 6(c) for a good description of the outcome
+#event(s) in a cohort study.
+#Example 3
+#Body condition was scored from 1 (emaciated) to 5 (obese)
+#using standard methods described by DAFF . Faecal consistency
+#was scored as described by Alberta Dairy Management
+# from 1, representing a liquid consistency, to 4,
+#representing a dry sample. Hide cleanliness was scored following
+#the guidelines of the Food Standards Agency ,
+#where 1 = clean and dry, and 5 = filthy and wet (Williams
+#et al., 2015).
+#Explanation
+#Authors should define all variables considered for and
+#included in the analysis, including outcomes, exposures,
+#predictors, potential confounders and potential effect modifiers.
+#Disease outcomes require adequately detailed
+#description of the diagnostic criteria. This applies to criteria
+#for cases in a case–control study, disease events during
+#follow-up in a cohort study and prevalent disease in a
+#cross-sectional study.
+#We advise that authors should declare all ‘candidate variables’
+#considered for statistical analysis, rather than selectively
+#reporting only those included in the final models (see
+#also item 16a) (Anderson et al., 2005; Wieland and Dickersin,
+#2005). Authors should report whether exposures are
+#consistent or change over the study period. For studies
+#involving follow-up, authors should describe how study
+#subjects were uniquely identified, allowing research personnel
+#to correctly record observations at follow-up visits.
+
 
 ####5. Data sources/measurement####
 # For each variable of interest, give sources of data and details of methods of assessment (measurement). 
 #Describe comparability of assessment methods if there is more than one group
 
-####6. Bias#### 
-#Describe any efforts to address potential sources of bias
+#Example
+#Each tumour was examined independently by two specialist
+#veterinary pathologists and, to be included, had to have a
+#minimum of 7 (out of a possible 10) features identified as
+#part of the histopathology study. The 10 features included
+#the presence of: aggregates of lymphocytes, infiltrative margins,
+#intralesional necrosis, perilesional scarring,/inflammation,
+#adjuvant-like material in macrophages, medium-high
+#mitotic rate, giant cells and types of cellular differentiation
+#. To be included in the estimate of incidence the FISS
+#(“Feline Injection Site Sarcomas” added by authors) had to
+#be diagnosed at the practices for which denominator
+#information was available (Dean et al., 2013).
+#Explanation
+#The way in which exposures, confounders and outcomes
+#were measured affects the reliability and validity of a study.
+#Measurement error and misclassification of exposures or
+#outcomes can make it more difficult to detect cause–effect
+#relationships, or might produce spurious relationships.
+#Error in measurement of potential confounders can
+#increase the risk of residual confounding (Becher, 1992;
+#Brenner and Blettner, 1997). It is helpful, therefore, if
+#authors report the findings of any studies of the validity or
+#reliability of assessments or measurements, including
+#details of the reference standard that was used. Rather than
+#simply citing validation studies, we advise that authors give
+#the estimated validity or reliability, which can then be used
+#for measurement error adjustment or sensitivity analyses
+#(see items 12 and 17).
+#In addition, it is important to know whether groups
+#being compared differed with respect to the way in which
+#the data were collected. For instance, if an interviewer first
+#questions all the cases and then the controls, or vice versa,
+#bias is possible because of the learning curve; solutions such
+#as randomizing the order of interviewing might avoid this
+#problem. Information bias might also arise if the compared
+#groups are not given the same diagnostic
 
-####7. Study size#### 
-#Explain how the study size was arrived at
+#5 (b). If a questionnaire was used to collect data, describe
+#its development, validation and administration
+#Example
+#Questionnaire designs were the collective effort of five
+#veterinarians (including four epidemiologists) and a biostatistician.
+#Included in the design group was the Veterinary
+#Officer for Poultry Diseases, who had an in-depth knowledge
+#of each farm as a result of working with the producers
+#to eradicate Salmonella from poultry. There were several
+#questionnaires, the main one designed to record independent
+#variables acting at the various levels of broiler production
+#such as at the flock, house and farm levels. During the
+#interval between flocks in each broiler house, a field technician
+#employed by the Veterinary Officer for Poultry Diseases
+#visited each farm to record responses from face-to-face
+#interviews with the person most closely associated with the
+#hands-on management of the broiler flocks and houses, and
+#to record observations of cleaning and disinfection procedures
+#between flocks. The design team reviewed all questions
+#and the method of recording with the field technician
+#to ensure clear understanding. The Veterinary Officer for
+#Poultry Diseases accompanied the field technician on all farm
+#visits and questionnaire recording for the first full month of
+#sampling. During the course of the study, two university-educated
+#field technicians were employed. The first technician was
+#employed for two years, and trained the second technician for
+#one month prior to leaving the project. Interview times varied
+#from 10 to 15 minutes per questionnaire, depending on
+#whether the producer needed to verify records. To ensure consistency
+#in responses, data collected at the previous visit were
+#reviewed with the producer. All questions pertaining to our
+#analysis were closed (Guerin et al., 2007).
+#Explanation
+#For STROBE-VET, we needed to draw attention to the
+#descriptions of questionnaire development and administration,
+#because questionnaires are a common data
+#source for veterinary observational studies. Occasionally,
+#authors provide information documenting their questionnaire
+#validation methods, sometimes as a separate
+#publication (Ramon et al., 2008; Dufour et al., 2010). If
+#previous validation information is not available, then
+#the authors should describe their approach for developing
+#and testing the questionnaire in the manuscript.
+#Like any diagnostic test, unless validated, the diagnostic
+#characteristics of the questionnaire and its ability to
+#accurately measure the variables are unclear. The questionnaire(
+#s) should also be included as supplementary
+#data, or in an open access, permanent site preferably
+#with a Digital Object Identifier (DOI).
 
-####8.Quantitative variables#### 
-#Explain how quantitative variables were handled in the analyses. If applicable, describe which groupings were chosen and why
-#(a) Describe all statistical methods, including those used to control for confounding
-#(b) Describe any methods used to examine subgroups and interactions
-#(c) Explain how missing data were addressed
-#(d) Cohort study—If applicable, explain how loss to follow-up was addressed
-#Case-control study—If applicable, explain how matching of cases and controls was addressed
-#Cross-sectional study—If applicable, describe analytical methods taking account of sampling strategy
 
-####9.Statistical methods####
-#(e) Describe any sensitivity analyses
+#5 (c). Describe whether or not individuals involved in data
+#collection were blinded, when applicable
+#Example
+#This was an observational study of 292 uniquely identified
+#Bovelder cows born in either 2002 or 2003 (2002 and 2003
+#cohorts) that were followed from just prior to their first
+#breeding season until they had weaned up to five calves. .
+#Farm management and staff were blinded to RTS (reproductive
+#tract scoring) data throughout the study (Holm
+#et al., 2015).
+#Explanation
+#While blinding is commonly associated with randomized
+#controlled trials, in observational studies, there is potential
+#for information bias in measurement of exposure
+#arising from knowledge of the outcome of interest (case–
+#control studies) or information bias in measurement of
+#the outcome arising for knowledge of the exposure of
+#interest (cohort studies) (O’Connor et al., 2010; Sargeant
+#et al., 2010). For example, if researchers conduct a case–
+#control study determining factors associated with a tickborne
+#disease such as Lyme disease (the outcome of
+#interest) and an owner is interviewed about indoor or
+#outdoor exercise (the exposure of interest), the owners
+#of case animals might recall outdoor exercise more
+#easily, because they are familiar with the disease and its
+#causes. This prior knowledge is a potential source of
+#bias. Thus, information about blinding is critical for the
+#reader to assess the impact of bias on the study result.
+#Similar to clinical trials, the use of the terms single- and
+#double blinding should be avoided. Rather, the author
+#should specify the task, caregiver or outcome assessor
+#who is blinded (Giuffrida et al., 2012).
+
+#5 (d). Describe any efforts to assess the accuracy of the
+#data (including methods used for ‘data cleaning’ in
+#primary research, or methods used for validating
+#secondary data)
+#Example
+#Selections of dogs from the entire hospital records were
+#made using Oracle programming languages . . First, an
+#in-house hospital code for laboratory-confirmed diagnosis
+#of urolithiasis was used to isolate all the eligible dogs within
+#the boundaries of the study population. . Afterwards,
+#urolith laboratory results or medical notes of the identified
+#dogs were manually reviewed to isolate those whose urolith
+#composed of at least 70% monohydrate or dehydrate forms
+#of CaOx (case dogs). Urolith composition was determined
+#at one of two commercial laboratories . by means of optical
+#crystallography or infrared spectroscopy as described
+#elsewhere  (Okafor et al., 2014).
+#Explanation
+#Reporting the measurement approach is frequently insufficient
+#to ensure validity; therefore, when efforts are made to
+#ensure the data are valid (e.g. the case validity in the example
+#above), these methods should be documented. This
+#documentation enables the end-user to identify potential
+#information bias. In the example above, there could have
+#been concern that the electronic medical records were inaccurate;
+#therefore, the authors validated the electronic medical
+#records by examining the physical medical records,
+#giving the end-user greater confidence in the variable measured.
+#In addition, when data are used for multiple different
+#studies, the data could have been collected for a different
+#purpose initially than that described in the later study. In
+#this case, the original purpose should be described. A
+#description of data validation approaches has recently been
+#published (Emanuelson and Egenvall, 2014).
+
+#Example
+#The responses were collected through face-to-face interviews
+#conducted by four experienced interviewers (two
+#teams each comprising two interviewers) between October
+#2011 and March 2012. As there are different dialects in the
+#Philippines, the questionnaire was written in English and
+#translated to the appropriate dialect at the interview. To
+#reduce information bias the questionnaire was pretested on
+#experts in the Philippines pig production systems comprising
+#regional and provincial veterinary officers and animal
+#health advisors. All questions in the questionnaire were
+#clarified with all interviewers before the study date. The
+#interviewers were instructed to ask questions exactly as stated
+#in the questionnaire and provide only non-directive
+#guidance. To minimize inter-observer variability in conducting
+#the interview, all observers and PVO [Provincial
+#Veterinary Office] personnel met after the questionnaire
+#was piloted on the six farms to agree on a common interpretation
+#of the findings. If there was disagreement, the
+#interpretation of the PVO was chosen. To minimize information
+#(misclassification) and selection biases, the
+#interviewers were asked to verify the trader’s identity, dates
+#when the pigs were sold and number of pigs sold for
+#slaughter before an interview was conducted. . The validity
+#of the collected questionnaire data was confirmed during
+#follow-up visits to six farms (three in each province) by
+#the first author, the interviewers and Provincial Veterinary
+#Officers personnel. To reduce misclassification bias that
+#could arise from coding errors, the interviewers and the
+#first author checked and corrected impossible coding of
+#categorical variables (n = 80) and unreliable outlier values
+#for continuous variables (n = 3) (Alawneh et al., 2014).
+#Explanation
+#Bias causes study results to differ systematically from the
+#truth. It is important for a reader to know what measures
+#were taken during the conduct of a study to reduce the
+#potential of bias. Ideally, investigators carefully consider
+#potential sources of bias when they plan their study. At the
+#stage of reporting, we recommend that authors always assess
+#the likelihood of relevant biases. Specifically, the direction
+#and magnitude of bias should be discussed and, if possible,
+#estimated. When investigators have set up quality control
+#programmes for data collection to counter a possible ‘drift’
+#in measurements of variables in longitudinal studies, or to keep
+#variability at a minimum when multiple observers are used,
+#these should be described. In veterinary medicine, euthanasia
+#or animal culling is a unique potential form of attrition bias,
+#and authors should describe any methods used to account for
+#this bias. Recently, an overview of approaches for addressing
+#bias, including quantitative bias analysis and the use of bias
+#parameters in data analysis, with accompanying veterinary
+#examples was published (Dohoo, 2014).
+#A discussion about selection bias, information bias and
+#confounding as well as their impact on observational studies
+#is provided in Box 1: Bias in observational studies and
+#Box 5: Confounding .
+
+####6 (a). Study size: ####
+#Describe how the study size was arrived
+#at for each relevant level of organization
+#Example
+#A sample size of 36 cases and 108 controls was calculated
+#to provide a 95% level of confidence for detecting
+#an odds ratio of 3 with 80% statistical power, assuming
+#a 1:3 ratio of case to control farmers and a random
+#notification process such as a 50% probability of reporting
+#observed oyster mortality. Sample size was increased
+#by 15% to account for non-participation rate observed
+#in previous and recent studies conducted in the same
+#population , leading to a total of 41 cases and 124
+#controls, out of 165 and 703 eligible oyster farmers,
+#respectively (Lupo et al., 2014).
+#Explanation
+#A study should be large enough to obtain a point estimate
+#with a sufficiently narrow confidence interval to meaningfully
+#answer a research question. Large samples are needed
+#to distinguish a small association from no association. Small
+#studies often provide valuable information, but wide confidence
+#intervals might indicate that they contribute less to
+#current knowledge in comparison with studies providing
+#estimates with narrower confidence intervals. Also, small
+#studies that show ‘interesting’ or ‘statistically significant’
+#associations are published more frequently than small
+#studies that do not have ‘significant’ findings. While these
+#studies might provide an early signal in the context of
+#discovery, readers should be informed of their potential
+#weaknesses.
+#The importance of sample size determination in observational
+#studies depends on the context. If an analysis is
+#performed on data that were already available for other
+#purposes, the main question is whether the analysis of
+#the data will produce results with sufficient statistical precision
+#to contribute substantially to the literature. Formal
+#a priori calculation of sample size might be useful when
+#planning a new study (Rigby and Vail, 1998; Carlin and
+#Doyle, 2002). Such calculations are associated with more
+#uncertainty than implied by the single number that is
+#generally produced. For example, estimates of the rate of
+#the event of interest or other assumptions central to calculations
+#are commonly imprecise, if not guesswork
+#(Schulz and Grimes, 2005). The precision obtained in the
+#final analysis can often not be determined beforehand
+#because it will be reduced by inclusion of confounding
+#variables in multivariable analyses (Drescher et al., 1990),
+#the degree of precision with which key variables can be
+#measured, and the exclusion or non-selection of some
+#individuals (Devine and Smith, 1998).
+#Sample size determination can be complicated further by
+#studies with multiple objectives. Studies frequently have
+#multiple objectives, largely to maximize the amount of data
+#that can be collected from a research study. For instance, a
+#cross-sectional study might estimate an outcome frequency
+#and evaluate the association between one or more exposures
+#on that outcome. It should be clear to the reader
+#which objective was used for sample size determination or,
+#if both objectives were considered, how the final sample
+#size was derived.
+#In animal health, observational studies might not be
+#hypothesis driven. These studies are not conducted to
+#detect a specific effect size magnitude for an a priori identified
+#exposure of interest. Instead, a large number of
+#association measures are calculated with varying levels of
+#precision. This type of study is hypothesis generating.
+#This factor should be discussed specifically, and the rationale
+#for the sample size should be provided. Often, studies
+#do not use formal sample size calculations. For
+#example, when a small number of cases are available for a
+#case–control study, the investigators might choose to
+#include all eligible cases. In this case, the reader still needs
+#to understand how the sample size was derived such as
+#selection of all available cases to evaluate the potential for
+#selection bias or identify an underpowered study.
+
+#6 (b). Describe how non-independence of measurements
+#was incorporated into sample size considerations, if
+#applicable
+#Example 1
+#The expected prevalence of MRSA was estimated to be
+#considerably lower at 1–2% , with a much lower
+#between cluster T variance estimated at 0.0001, meaning
+#a total of 800 nasal swab samples would be required to
+#estimate prevalence with a precision of 1% and 95%
+#confidence. To allow for an overall compliance proportion
+#of approximately 60%, each practice was asked to
+#recruit the next 20 horses seen on visits (a total of
+#1300 horses) (Maddox et al., 2012).
+#Example 2
+#Researchers adjusted this sample size16 for clustering of
+#stillbirth risk in a herd by using the formula n* = n[1 + (m
+# 1)q], where m is the average herd size, q is the intra-class
+#correlation coefficient (ICC), and n is the unadjusted sample
+#size necessary to determine the difference between 2
+#proportions.15 Expected herd size was approximately 150
+#cows and the ICC was estimated to be q = 0.09 (Waldner,
+#2008).
+#Explanation
+#Given the frequency of non-independent study units in
+#animal populations (see Box 4: Organization structures in
+#animal populations), authors should adjust sample size
+#calculations to account for non-independence. Failure to
+#account for non-independence in sample size determinations
+#might result in studies that are underpowered when
+#analysed correctly using methods that account for clustering.
+#The ethics of conducting underpowered studies are
+#less obvious for observational studies, because study units
+#are observed rather than purposefully assigned to a group.
+#However, resources are potentially wasted when studies are
+#underpowered; therefore, adjustment for non-independence
+#in sample size determinations should be conducted
+#for prospectively planned observational studies.
+#10 (c). If a formal sample size calculation was used,
+#describe the parameters, assumptions, and methods that
+#were used, including a justification for the effect size
+#selected
+#Example
+#.prior to conducting the analysis, sample size calculations
+#were performed to determine whether it was likely to
+#obtain a data set of sufficient size to detect a difference of
+#7.5 kg (16.5 lb) in the primary outcome, live weight, in a
+#© 2016 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH 
+# Zoonoses and Public Health, 2016, 63, 662–698 677
+#A. M. O’Connor et al. STROBE-Vet Explanation and Elaboration
+#population with 33% of calves in the IBK group and 67%
+#in the unaffected group, with a type I error probability of
+#0.05, a type II error probability of 0.8, and a 1:2 ratio for
+#case and control calves. The rationale for use of these
+#parameters was that results of a prior study suggested that
+#calves with IBK weighed approximately 7.5 kg less at weaning
+#than unaffected calves, and the prevalence of IBK was
+#approximately 33% in the study herd (Funk et al., 2014).
+#Explanation
+#Samples sizes should be calculated based on realistic estimates.
+#While statistical power can be determined using the
+#effect estimate precision and low power affects precision
+#not bias, providing the rationale and assumptions used in
+#the calculations allows the reader to infer the impact of
+#those assumptions on the sample size. For example, what
+#constitutes a meaningful difference might vary between different
+#regions, and the assumed level of non-independence
+#can vary between populations.
+
+
+#####11. Quantitative variables:#### 
+#Explain how quantitative
+#variables were handled in the analyses. If applicable,
+#describe which groupings were chosen, and why
+#Examples
+#Age was grouped on a biological basis into less than
+#2.5 years, between 2.5 and 4.5 years and more than
+#4.5 years. This categorisation was decided upon as 2.5 and
+#4.5 years approximately coincide with ages at first and second
+#parturition in llamas (Rooney et al., 2014).
+#Explanation
+#Investigators make choices regarding how to collect and
+#analyse quantitative data about exposures, effect modifiers
+#and confounders. Grouping choices might have important
+#consequences for later analyses (Altman et al., 1994; Royston
+#et al., 2006). We advise that authors explain why and
+#how they grouped quantitative data, including the number
+#of categories, the cut points and category mean or median
+#values (as appropriate). Whenever data are reported in
+#tabular form, the counts of cases, non-cases or controls,
+#animals at risk, animal-time at risk, etc. should be given
+#for each category. Tables should not consist solely of
+#effect-measure estimates or results of model fitting.
+#Authors should state whether categories were selected a
+#priori or based on the collected data.
+#>Investigators might model an exposure as continuous
+#to retain all the information. In making this choice, one
+#needs to consider the nature of the relationship of the
+#exposure to the outcome. Investigators should report how
+#departures from linearity were investigated (e.g. using log
+#transformation, quadratic terms or spline functions).
+#Several methods exist for fitting a nonlinear relation
+#between the exposure and outcome (Greenland, 1995;
+#Royston et al., 1999, 2006). Also, it might be informative to
+#present both continuous and grouped analyses for a quantitative
+#exposure of prime interest.
+
+#####12. Statistical methods####
+#12 (a). Describe all statistical methods for each objective,
+#at a level of detail sufficient for a knowledgeable reader to
+#replicate the methods. Include a description of the
+#approaches to variable selection, control of confounding
+#and methods used to control for non-independence of
+#observations
+#Example 1
+#Collinearity between the variables was investigated by v2
+#analysis. The risk factors initially offered to the model were
+#excluded from the model with a conditional backward elimination
+#procedure; the possible interaction terms were then
+#investigated with a forward conditional selection procedure.
+#A factor was entered in the model at p ≤ 0.05 and removed
+#at p ≥ 0.10. The likelihood ratio test was used to assess the
+#overall significance of the model (two-tailed significance
+#level p ≤ 0.05). Confounding was monitored by evaluating
+#the change in the coefficient of a factor after removing
+#another factor; if the change exceeds 25% of the coefficient
+#value, the removed factor is considered a potential confounder.
+#The significance of each term in the model was
+#tested by Wald’s v 2. In the final model, biologically plausible
+#interaction between factors was investigated by significance.
+#Estimated OR and 95%Wald’s confidence interval (CI) were
+#obtained as measures of predictor effect (Rizzo et al., 2016).
+#Example 2
+#To account for the hierarchical structure of the data, a crossclassification
+#of feedlot-years (11 feedlots in 2000, 13 in
+#2001–2002.) was included as a random intercept to model
+#the overdispersion arising from the lack of independence
+#of cohorts nested within feedlots, and of feedlots nested
+#within arrival years. In addition, arrival month . was modeled
+#as a random intercept using a first-order autoregressive
+#covariance structure to account for the repeated measures of
+#cohorts, within feedlot-years, over months with decay in correlation
+#with increasing distance between observations 
+#Lastly, arrival week . within a month was modeled as a
+#random intercept to control for the correlation of
+#weeks within arrival months (Babcock et al., 2013).
+#Explanation
+#Describing statistical methods can be challenging, because
+#the level of detail sufficient for a knowledgeable reader to
+#© 2016 678 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH  Zoonoses and Public Health, 2016, 63, 662–698
+#STROBE-Vet Explanation and Elaboration A. M. O’Connor et al.
+#replicate the methods is open to interpretation2 . The author
+#should focus on clearly describing the approach rather than
+#listing statistical tests. Inclusion of a diagram or flow chart
+#to explain a complex analytical process might be helpful.
+#One applicable resource for reporting statistical methods
+#are the SAMPL guidelines (Lang and Altman, 2013). Based
+#on the SAMPL guidelines, the description of the analysis
+#approach can be split into three components: (i) the preliminary
+#analysis, (ii) the primary analysis and (iii) any supplementary
+#analysis. Authors are encouraged to make the data
+#and their software coding available as supplementary material
+#or in data depositories.
+#In general, there is no one correct statistical analysis but,
+#rather, several possibilities that might address the same
+#question, but make different assumptions. Regardless,
+#investigators should predetermine analyses at least for the
+#primary study objectives in a study protocol. Often additional
+#analyses are needed, either instead of, or as well as,
+#those originally envisaged, and these might sometimes be
+#motivated by the data. Authors should tell readers whether
+#particular analyses were suggested by data inspection. Even
+#though the distinction between pre-specified and exploratory
+#analyses might sometimes be blurred, authors should
+#clarify reasons for particular analyses.
+#Authors should explain all potential confounders considered,
+#and the criteria for excluding or including variables
+#in statistical models. Decisions about excluding or including
+#variables should be guided by knowledge, or explicit
+#assumptions, on causal relations. Inappropriate decisions
+#might introduce bias, for example by including variables
+#that are in the causal pathway between exposure and disease
+#(unless the aim is to assess how much of the effect is
+#carried by the intermediary variable). If the decision to
+#include a variable in the model was based on the change in
+#the estimate, it is important to report what change was
+#considered sufficiently important to justify its inclusion. If
+#an algorithm such as ‘backward elimination’ or ‘forward
+#inclusion’ was used, report the process (including whether
+#a manual or automated process was used) and the significance
+#level and test or other basis (information criteria) for
+#selecting inclusion or exclusion of variable(s) from the
+#model.
+
+#12 (b). Describe the rationale for examining subgroups
+#and interactions and the methods used
+#Example
+#Biologically important two-way interactions of the explanatory
+#variables in the final model were examined and
+#retained if significant (p < 0.05) (Schemann et al., 2011).
+#Explanation
+#Subgroup analyses and interactions can be planned or conducted
+#after reviewing the data. Authors should report if
+#the subgroup analysis was pre-planned or informed by data
+#examination. This information allows the end-user to identify
+#the presented associations in the context of hypothesis
+#testing or hypothesis generating.
+
+#12 (c). Explain how missing data were addressed
+#Examples
+#In model 1, only subjects with complete information on variables
+#in the final model were included. Model 2 was a Bayesian
+#full-likelihood analysis where missing data were taken
+#into account and became a multidimensional additional
+#parameter  (Rossow et al., 2014).
+#Explanation
+#Missing data are common in observational research. Questionnaires
+#are not always filled in completely, owners might
+#not bring their animal to all follow-up visits and routine
+#data sources and clinical databases are often incomplete.
+#For analyses that account for missing data, authors should
+#describe the nature of the analysis (e.g. multiple imputation)
+#and the assumptions that were made (See Box 7:
+#Missing data: problems and possible solutions).
+#In cases where euthanized or culled animals are designated
+#as missing data or observations lost to follow-up in
+#the analysis, the authors should clearly identify this criterion
+#as a cause of missing data. Describing this aspect of
+#the analysis is important, because the circumstances surrounding
+#culling or euthanasia are likely not to be random,
+#which violates the assumption that the missing data are
+#random. The approach for reporting missing observations
+#or loss to follow-up is discussed in item.
+
+#12 (d). If applicable, describe the analytical approach to
+#loss to follow-up, matching, complex sampling and
+#multiplicity of analyses
+#Example
+#Conditional logistic regression  was used to assess differences
+#in mean production (3.5% FCM, fat, protein, LSCC),
+#JD test status as adults, removal from herd during the
+#observation period, and JD test status of dam between cases
+#and controls (Pillars et al., 2011).
+#Explanation
+#For cohort studies, authors should report whether they
+#conducted analyses to determine whether loss to followup
+#was differentially associated with other factors.
+#2 Another consideration is the approach for handling
+#failure to observe the outcome, which can vary greatly
+#depending upon the disease frequency measure such as
+#rates or risk (Box 6: Measures of Association and measures
+#of impact). In cohort studies that use rates such as
+#animal-time at risk), the observed time of animals lost
+#to follow-up are included in the analysis, and the outcome
+#is censored. Because the approach used to analyse
+#censored data also varies, it should be described accordingly
+#(see item 7). When performing a survival analysis,
+#an unobserved outcome can be the result of loss to follow-
+#up or completion of the study. The authors should
+#clearly state whether the analysis treats these two forms
+#of censoring differently. When incidence risk (cumulative
+#incidence) is the disease frequency measure, authors
+#should explain how they interpreted data about animals
+#that leave the study before the end of the study
+#In individually matched case–control studies, a crude
+#analysis of the odds ratio ignoring the matching usually
+#leads to an estimation that is biased towards unity (see
+#Box 2: Matching in case–control studies).
+#When authors use complex, multiple-stage sampling
+#schemes to select the study population, authors should
+#describe how this scheme is incorporated into the data
+#analysis, thereby providing a valid estimate of effect size
+#and precision.
+#When authors conduct multiple hypothesis tests, then
+#authors should indicate if they did or did not use a method
+#to adjust the definition of a ‘statistically significant’ P-value.
+#The description of the method should clarify whether an
+#adjustment approach for multiple comparisons was
+#employed within a specific hypothesis test.
+
+#12 (e). Describe any analyses used to assess the robustness
+#of the analyses (e.g. sensitivity analyses or quantitative
+#bias assessment)
+#Example
+#The national database used to sample controls did not
+#enable us to take into account the size of the flocks. Therefore,
+#counties with a large percentage of small flocks (<20
+#ewes) might have been overrepresented. To assess the influence
+#of geographic selection bias, we conducted a sensitivity
+#analysis by using 2 methods: 1) weighting of controls in the
+#final model with weights being defined for each county as
+#the ratio of the percentage of flocks >20 ewes in the county
+#divided by the percentage of flocks >20 ewes at the national
+#scale, and 2) introduction of sheep production areas as random
+#coefficients in the final model (Fediaevsky et al.,
+#2009).
+#Explanation
+#Sensitivity analyses are useful to investigate whether or not
+#the main results are consistent with those obtained with
+#alternative analysis strategies or assumptions (Rothman
+#and Greenland, 1998). Issues that might be examined
+#include the criteria for inclusion in analyses, the definitions
+#of exposures or outcomes (Custer et al., 2006), which confounding
+#variables merit adjustment, the handling of missing
+#data (Wakefield et al., 2000; Dunn et al., 2001),
+#possible selection bias or bias from inaccurate or inconsistent
+#measurement of exposure, disease and other variables,
+#and specific analysis choices, such as the treatment of quantitative
+#variables (see item 11). Sophisticated methods are
+#used increasingly to simultaneously model the influence of
+#several biases or assumptions (Greenland, 2003; Lash and
+#Fink, 2003; Phillips, 2003).
 
 --------------------------
   
   
 --------------------------
     ####Results####
+
 ####1.Participants####
+
 #(a) Report numbers of individuals at each stage of study—eg numbers potentially eligible, examined for eligibility, confirmed eligible, included in the study, completing follow-up, and analysed
+# Example 1
+# During the study period, a total of 2457 cats attended the
+# Small Animal Teaching Hospital. Of these, 237 records
+# were identified after the database search, and 174 cases met
+# the eligibility criteria (Trehy et al., 2014).
+
+# Explanation
+# Detailed information on the process of recruiting study
+# participants is important for several reasons. Those
+# included in a study often differ in relevant ways from the
+# target population to which results are applied. This might
+# result in estimates of prevalence or incidence that do not
+# reflect the experience of the target population and lead to
+# selection bias (see Box 1: Bias in observational studies).
+# Investigators should give an account of the numbers of
+# owners/managers and animals considered at each stage of
+# recruiting study participants and at each level of organization.
+# The choice of a target population and the detailed criteria for
+# inclusion of participants’ data in the analysis should be described.
+# Depending on the type of study, this might include the number
+# of owners/managers and animals found to be eligible, the number
+# included in the study, the number examined, the number followed
+# up and the number included in the analysis. Information
+# on different organizational levels might be required, if sampling
+# of study participants is carried out at two or more organizational
+# levels (multistage sampling). In case–control studies, we advise
+# that authors describe the flow of participants separately for case
+# and control groups. (Schulz and Grimes, 2002) Controls can
+# sometimes be selected from several sources, including veterinary
+# clinics and community dwellers.
+
 #(b) Give reasons for non-participation at each stage
+
+# Example 1
+# We investigated a total of 233 known OJD infected flocks to
+# identify eligible flocks, of which the eligibility of 32 (13.7%)
+# could not be determined because the farmer refused to participate
+# for various reasons (lack of interest (6), old age or health
+# problems (4), inability to muster sheep (2), anger about past
+# surveys (1) and no reason given (19)) (Dhand et al., 2007).
+
+# Example 2
+# Reasons for exclusion were lack of a result for serum
+# cobalamin (35 cats), cobalamin measured using a different
+# method (13 cats), or incomplete clinical records (15 cats). A
+# record of prior cobalamin supplementation (within the three
+# months before presentation) was identified in 18 cases (16 with
+# serum cobalamin greater than the reference interval, 1 with
+# cobalamin within the reference interval and 1 with cobalamin
+# below the reference interval) (Trehy et al., 2014).
+
+# Explanation
+# Although low participation does not necessarily compromise
+# the validity of a study, transparent information on
+# participation and reasons for non-participation are essential.
+# Also, as there are no universally agreed definitions for
+# participation, response or follow-up rates, readers need to
+# understand how authors calculated such proportions (Slattery
+# et al., 1995; Galea and Tracy, 2007). Explaining the
+# reasons why owners/managers or animals no longer participated
+# in a study or why they were excluded from statistical
+# analyses helps readers judge whether the study population
+# was representative of the target population and whether
+# bias was possibly introduced. For example, in a survey of
+# horse owners investigating an equine health outcome, nonparticipation
+# due to reasons unrelated to a horses’ health status
+# (such as the survey not being delivered due to an incorrect
+#   address) might affect the estimate precision but is not likely to
+# introduce bias. Conversely, if owners/managers opt out of the
+# survey because their horse is ill or perceived to be in excellent
+# health, the results might underestimate or overestimate the
+# population’s prevalence of ill health. If failure to participate or
+# loss to follow-up during the study is related to both an exposure
+# of interest and the outcome, the relationship between the
+# exposure and the outcome might also be biased.
+
 #(c) Consider use of a flow diagram
+
+# Example
+# Figure extracted from publication(Menzies et al., 2012)
+
+# Explanation
+# An informative and well-structured flow diagram can readily
+# and transparently convey information that might otherwise
+# require a lengthy description (Egger et al., 2001). The
+# diagram might usefully include the main results such as the
+# number of events for the primary outcome. The flow chart
+# might need to include information for both owners/managers
+# and animals as well as information at multiple organizational
+# levels, if applicable.
 
 ####2.Descriptive data####
 #(a) Give characteristics of study participants (eg demographic, clinical, social) and information on exposures and potential confounders
+# Explanation
+# Readers need descriptions of study participants and their
+# exposures to judge the generalizability of the findings or
+# use the data in secondary analyses. In veterinary studies,
+# this might include descriptive information about the owners/
+#   managers, herds, pens and animals. In studies that compare
+# groups, the descriptive characteristics and numbers
+# should be given by group. The ‘group’ variable would be
+# exposure level or outcome status, depending on the study
+# subject selection method. Inferential measures such as standard
+# errors and confidence intervals should not be used to
+# describe the variability of characteristics, and significance
+# tests and P-values should be avoided when describing the
+# baseline characteristics of the study population. In cohort
+# studies, it might be useful to document how an exposure
+# relates to other characteristics and potential confounders.
+# Authors could present this information in a table with columns
+# for participants in two or more exposure categories,
+# which permits the reader to judge the differences in confounders
+# between these categories.
+# Information about potential confounders, including
+# whether and how they were measured, influences judgments
+# about study validity. We advise authors to summarize continuous
+# variables for each study group by giving the mean
+# and standard deviation, or, when the data have an asymmetrical
+# distribution (as is often the case), the median and percentile
+# range (e.g. 25th and 75th percentiles). Variables
+# made up by small number of ordered categories (such as
+# stages of disease I to IV) should not be presented as continuous
+# variables; it is preferable to give numbers and proportions
+# for each category. The SAMPL guidelines provide
+# recommendations for reporting descriptive statistics for different
+# variable types (Lang and Altman, 2013). We recommended
+# that descriptive information be provided for all
+# variables measured in the study, regardless of whether they
+# are included in the final analyses. To allow the reader to
+# evaluate the statistical power for an individual variable and
+# the probability of a type I error given the total number of
+# variables evaluated, authors should provide information on
+# the number of variables and the distribution of data among
+# each variable’s categories. Some journals might be reluctant
+# to publish extensive descriptive tables due to word limits or
+# page constraints. In these cases, we recommend that the
+# descriptive information be provided as supplementary material
+# and the total number of associations tested be provided
+# in the main text. The approach for presenting inferential
+# statistics is discussed in item 15. The decision to combine
+# descriptive statistics (item 13) and inferential statistics (item
+# 15), into one table, as was done in the example provided for
+# this item, depends on author and journal preference.
+
 #(b) Indicate number of participants with missing data for each variable of interest
+# Example
+# In total 112 farmers returned useable prospective records
+# on 2143 litters. . Cause and timing of piglet death data
+# were returned for 2826 piglets from 1304 litters from
+# 111 farms. . With the exception of unknown sow parity,
+# incomplete piglet mortality records were excluded
+# from the risk factor analysis, this amounted to 1714 piglet
+# records. Data on a cohort of 25,761 piglets from 2143
+# litters from 112 farms were analysed (KilBride et al.,
+# 2012).
+
+# Explanation
+# As missing data might bias or affect generalizability of
+# results, authors should tell readers the amounts of missing
+# data for exposures, potential confounders and other important
+# characteristics of study subjects (see item 12c and
+# Box 7: Missing data: problems and possible solutions).
+# Authors should clearly describe the number of animals
+# missing due to elective euthanasia or culling. Authors also
+# should report numbers at each level or organization. A
+# study with a small number of missing observations from
+# each herd might have different implications than a study
+# where all of the missing data are from one herd. We advise
+# authors to use their tables and figures to enumerate
+# amounts of missing data.
+
 #(c) Cohort study—Summarise follow-up time (eg, average and total amount)
 
+# Example
+# A total of 548 calves were recruited and followed up to
+# 51 weeks or until they died, contributing a total of 25,104
+# calf weeks (481.1 calf years) of life to the study. Five animals
+# were lost to follow up due to non-compliance to study
+# protocol or were stolen from the study farms. A total of 88
+# calves died before reaching 51 weeks of age, giving a crude
+# mortality rate of 16.1 (13.0–19.2; 95% CI) per 100 calves in
+# their first year of life. Of the 88 animals that died, 33 deaths
+# were attributed to East Coast fever, 10 to haemonchosis,
+# and 6 to heartwater (Thumbi et al., 2014).
+# Explanation
+# Readers need to know the duration and extent of follow-up
+# for the available outcome data. Authors can present a summary
+# measure of the follow-up such as the mean follow-up
+# time, median follow-up time or both, as appropriate. The
+# mean allows a reader to estimate the total number of animal-
+#   years by multiplying it with the number of study subjects.
+# Authors also might present minimum and maximum
+# times or percentiles of the distribution to show readers the
+# spread of follow-up times. They might report total animalyears
+# of follow-up or some indication of the proportion of
+# potential data that were captured (Clark et al., 2002). All
+# such information might be presented separately for animals
+# in two or more exposure categories.
+--------------------------
+  
+--------------------------
 ####3.Outcome data####
-#Cohort study—Report numbers of outcome events or summary measures over time
-#Case-control study—Report numbers in each exposure category, or summary measures of exposure
-#Cross-sectional study—Report numbers of outcome events or summary measures
+#Example 1
+#In the reduced dataset of 200 cats, 126 (63%) cats were classed
+#as overweight and 74 (37%) as normal weight. The BCS distribution
+#for the study population without the cats that were
+#excluded on medical grounds (n = 206) as shown in ..
+#Example 2
+#Table 4 Multivariable model of risk factors for the occurrence
+#of Campylobacter at first-depopulation in 354 conventional
+#broiler flocks in Northern Ireland, June 2001 to May 2002
+#Example 3
+#The FEC results were reported as ep5 g [eggs per 5 grams
+#of feces]. The range of egg counts was from 0 to 419 ep5 g.
+#Table III summarizes the range, mean, and median counts
+#for the 4 regions.
 
+#Explanation
+#Before addressing the possible association between
+#exposures (risk factors) and outcomes, authors should
+#report relevant descriptive data. It might be possible and
+#meaningful to present unconditional measures of association
+#in the same table that presents the descriptive data.
+#15 (a). Report outcomes as appropriate for the study
+#design and summarize at all relevant levels of
+#organization
+#Item 15 differs from item 14, in that 15 explicitly relates to
+#the outcome (event) information. In cross-sectional and
+#risk-based cohort studies, authors should report the number
+#of events for each outcome of interest. For example, in
+#Example 1, this information is provided in the table. Consider
+#presenting this information separately for participants
+#© 2016 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH 
+#Zoonoses and Public Health, 2016, 63, 662–698 685
+#A. M. O’Connor et al. STROBE-Vet Explanation and Elaboration
+#in different categories of key exposures of interest. Example
+#1 also includes information relevant to item 14 such as information
+#about the distribution of potential confounders. For
+#rate-based cohort (longitudinal) studies, consider reporting
+#the event rate per animal-year of follow-up. For case–control
+#studies, the focus will be on reporting exposures separately for
+#cases and controls as frequencies or quantitative summaries.
+#Describing the outcome at all organizational levels
+#requires balancing between complete reporting and ‘information
+#overload’. If the outcome analyses are all carried out
+#at the lowest level, the outcome at all higher levels might not be
+#need to be reported. However, the authors should provide the
+#reader with some idea as to how the outcome varies across higher
+#level units. In Example 3, the hierarchy consisted of province
+#(n = 4), herd (n = 38), cow (n = 304) and sample (n = 1946).
+#The authors provided some evidence of the variability in faecal
+#egg count across provinces by providing descriptive statistics in a
+#tabular form by province. In some cases, it might be appropriate
+#to report the outcome at different time points (e.g. for a longitudinal
+#study).
+#In Example 4, the organizational levels were herd
+#(n = 210) and cows (n  5000). To indicate the range of
+#incidence rates of several diseases across herds, they presented
+#those rates as box-and-whisker plots, which effectively convey
+#the cross-herd variability. When figures are used for presentational
+#clarity, tables of numerical values, which are required for
+#meta-analyses and risk analyses, should be included in the
+#main text or supplemental material.
+#Multilevel studies are often analysed using randomeffects
+#models. In these cases, the authors should present the
+#variance estimates at all levels to provide information about
+#the outcome variability across all organizational levels.
+#15 (b). For proportions and rates, report the numerator
+#and denominator
+#It is important to present both numerator and denominator
+#values, so users can calculate unconditional risk
+#ratios (RR) or odds ratios (OR). In Example 1 (crosssectional
+#study), the number of animals in the exposure
+#variable categories and the per cent with the outcome
+#are reported. These values allow the reader to compute
+#the numerator and denominator values for a RR. In
+#Example 2 (case–control study), the actual numerator
+#and denominator values (listed by key exposure variable
+#categories) and the associated ORs are presented. For
+#rate-based studies, the number of outcome events and
+#amount of animal-time at risk should be presented for
+#key predictor categories.
+#15 (c). For continuous outcomes, report the number of
+#observations and a measure of variability
+#For quantitative outcomes, present appropriate summary
+#measures. For (approximately) normally distributed values,
+#the authors should report the mean and standard deviation
+#(SD) or variance. We do not recommend reporting the
+#standard error of the mean, because standard error is an inferential
+#statistic rather than a descriptive one. For non-normally
+#distributed outcomes, report either the mean and SD of a normally
+#distributed transformed outcome or consider reporting
+#the median and interquartile range (or complete range) of the
+#original variable. In Example 3, the mean and SD as well as
+#the median and range have been presented.
+
+--------------------------
+  
+--------------------------
 ####4.Main results####
-#(a) Give unadjusted estimates and, if applicable, confounder-adjusted estimates and their  precision (eg, 95% confidence interval). Make clear which confounders were adjusted for and why they were included
-#(b) Report category boundaries when continuous variables were categorized
-#(c) If relevant, consider translating estimates of relative risk into absolute risk for a meaningful time period
+# 4 (a). Give unadjusted estimates and, if applicable,
+# adjusted estimates and their precision (e.g. 95% confidence interval). Make clear which
+# confounders and interactions were adjusted. Report
+# all relevant parameters that were part of the model 
+#Example 1 #(Willeberg et al., 2012)
 
-####5.Other analyses####
-#Report other analyses done—eg analyses of subgroups and interactions, and sensitivityanalyses
+# Explanation
+# In many situations, authors might present the results of
+# unadjusted or minimally adjusted analyses and those from
+# fully adjusted analyses. We advise giving the unadjusted
+# analyses together with the main data, for example the number
+# of cases and controls that were exposed or not. This
+# allows the reader to understand the data behind the measures
+# of association (see also item 15). For adjusted analyses,
+# report the number of animals in the analysis, as this
+# number might differ because of missing values in covariates
+# (see also item 12c). Estimates should be given with confidence
+# intervals.
+# Readers can compare unadjusted measures of association
+# with those adjusted for potential confounders and
+# judge by how much, and in what direction, they changed.
+# Readers might think that ‘adjusted’ results equal
+# the causal part of the measure of association, but
+# adjusted results are not necessarily free of random sampling
+# error, selection bias, information bias or residual
+# confounding. Thus, great care should be exercised when
+# interpreting adjusted results, as the validity of results often
+# depends crucially on complete knowledge of important
+# confounders, their precise measurement and appropriate
+# specification in the statistical model (see also item 20)
+# (Smith and Phillips, 1990; Christenfeld et al., 2004).
+# Data non-independence is frequently encountered in
+# animal studies and often addressed by fitting a
+# random-effects model. It is important that these random
+# effects be reported (and interpreted), because they
+# are as important a model component as the fixed
+# effects (see Example 2).
+# 4 (b). Present category boundaries when continuous
+# variables were categorized
+
+# Explanation
+# Categorizing continuous data has several important
+# implications for analysis (Box 3: Grouping / C) and also
+# affects the presentation of results. In tables, outcomes
+# should be given for each exposure category, for example
+# as counts of animals at risk, animal-time at risk, if relevant
+# separately for each group (e.g. cases and controls).
+# Details of the categories used might aid comparison of
+# studies and meta-analysis. If data were grouped using conventional
+# cut points (e.g. below normal, normal reference
+# range, above normal for body temperature), group boundaries
+# such as range of values can be derived easily, except
+# for the highest and lowest categories. If quantile-derived categories
+# are used, the category boundaries cannot be inferred
+# from the data. At a minimum, authors should report the
+# category boundaries; it is helpful also to report the range of
+# the data and the mean or median values within categories.
+# Commonly, category boundaries are presented directly in
+# the table with model results (see Example 1).
+
+
+# 4 (c). If relevant, consider translating estimates of relative
+# risk into absolute risk for a meaningful time period
+# Example
+# Table 4 Population attributable fraction (PAF) and 95%
+# confidence interval for selected explanatory variables
+# regarding 295 dog owners in Taiwan (2004)
+
+# Explanation
+# In many circumstances, the absolute risk associated with
+# an exposure is of greater interest than the relative risk.
+# Absolute measures such as risk different and measures
+# of impact such as aetiological fraction in the exposed or
+# aetiological fraction in the population might be useful to
+# gauge how much disease can be prevented if the exposure
+# is eliminated (example above). For this reason, such
+# measures are of interest to the end-users. These measures
+# should preferably be presented together with a
+# measure of statistical uncertainty, although CI calculations
+# might be difficult for estimates derived from multivariable
+# models. Authors should be aware of the strong
+# assumptions made in this context, including a causal
+# relationship between a risk factor and disease (also see
+# Box 6: Measures of Association and measures of impact)
+# (Rockhill et al., 1998). Because of the semantic ambiguity
+# and complexities involved, authors should report the
+# method used to calculate such measures, ideally giving
+# Box 3
+# Grouping / Categorization
+# There are several reasons why continuous data might be grouped (Altman, 2005). When collecting data, it might be better
+# to use an ordinal variable than to seek an artificially precise continuous measure for an exposure based on recall over several
+# years. Categories might also be helpful for presentation, for example to present all variables in a similar style, or to
+# show a dose–response relationship.
+# Grouping might also be done to simplify the analysis, for example to avoid an assumption of linearity or when investigating
+# interactions between two continuous variables. However, grouping loses information and might reduce statistical power
+# (Cohen, 1983) especially when dichotomization is used (Zhao and Kolonel, 1992; MacCallum et al., 2002; Royston et al.,
+#                                                        2006). If a continuous confounder is grouped, residual confounding might occur, whereby some of the variable’s confounding
+# effect remains unadjusted (see Box 5: Confounding) (Cochran, 1968; Becher, 1992). Increasing the number of categories
+# can diminish power loss and residual confounding, and is especially appropriate in large studies. Small studies might use
+# few groups because of limited numbers.
+# Investigators might choose cut points for groupings based on commonly used values that are relevant for diagnosis or prognosis,
+# for practicality, or on statistical grounds. They might choose equal numbers of individuals in each group using quantiles
+# (Clayton et al., 1993). On the other hand, one might gain more insight into the association with the outcome by
+# choosing more extreme outer groups and having the middle group(s) larger than the outer groups (Cox, 1957). In case–
+# control studies, deriving a distribution from the control group is preferred as it is intended to reflect the source population.
+# Readers should be informed if cut points were selected post hoc. In particular, if the cut points were chosen to minimize a
+# P value, the true strength of an association will be exaggerated (Altman et al., 1994).
+# When analysing grouped variables, it is important to recognize their underlying continuous nature. For instance, a possible
+# trend in risk across ordered groups can be investigated. A common approach is to model the rank of the groups as a continuous
+# variable. Such linearity across group scores will approximate an actual linear relation if groups are equally spaced but
+# not otherwise. Il’ysova et al. (Il’yasova et al., 2005) recommends publication of both the categorical and the continuous estimates
+# of effect, with their standard errors, to facilitate meta-analysis, as well as providing intrinsically valuable information
+# on dose–response. One analysis might inform the other and neither is assumption-free. Authors often ignore the ordering
+# and consider the estimates (and P-values) separately for each category compared with the reference category. This might be
+# useful for description, but might fail to detect a real trend in risk across groups. Recent method developments, such as fractional
+# polynomials that fit a wide range of nonlinear relationships (Royston and Sauerbrei, 2008), and the availability of software
+# to implement these methods in standard software packages reduces the need to routinely categorize variables.
+# © 2016 688 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH  Zoonoses and Public Health, 2016, 63, 662–698
+# STROBE-Vet Explanation and Elaboration A. M. O’Connor et al.
+# the formulae used or a citation for the formula (Uter and Pfahlberg, 2001).
+
+####5. Other analyses: s####
+# Report other analyses done, such asensitivity / robustness analysis and analysis of subgroups
+# Examples
+# Sensitivity testing was done for each model by lowering
+# prior test accuracy estimates’ mode by 10 percentage points
+# (e.g., ELISASe from 0.95 to 0.85), relaxing the beta distribution
+# to a 50th percentile and reducing the lower bound 10
+# percentage points below the previous lower bound (e.g.,ELISASe from 0.9 to 0.8) and using a uniform beta distribution
+# as the prior distribution for exposure prevalence
+# (Haley et al., 2011).
+# Explanation
+# When an observational study has a single primary question,
+# the reader reasonably might assume that all the study
+# design features were selected with that question in mind
+# (e.g. sample size and power, the interpretation of the alpha
+#   error, accuracy enhancement and bias reduction measures
+#   and potential confounders). If additional questions and
+# analyses were included in the study, the authors must tell
+# the readers. Lack of full disclosure distorts the interpretation
+# of everything from bias control effectiveness to multiplicity
+# considerations. The reader must be informed of all
+# secondary analyses (e.g. conducting sensitivity analyses, or
+# testing for interactions or particular subgroup analyses)
+# were pre-specified (a priori, e.g.) or were steered by the data
+# themselves (post hoc analyses). For example, ‘non-significant’
+# interactions or risk factors are ‘results’ unto themselves,
+# and they assist in framing the context of ‘significant’
+# results. Post hoc subgroup analyses that appear more ‘exciting’
+# than the answers to the primary question must be
+# viewed cautiously.
+# Researchers often must extrapolate the ‘base’ values of
+# relevant input data. Examples include declaring prior distributions
+# for Bayesian analyses and declaring the diagnostic
+# test accuracy used for adjusting apparent prevalences to
+# true prevalences. In some instances, distributions are
+# unknown or variables have great inherent contextual variation,
+# which leads to considerable uncertainty. When faced
+# with such assumptions about uncertainty, authors should
+# conduct ‘sensitivity analyses’ to discover the sensitivity (robustness)
+# of the conclusions with respect to reasonable
+# variation from base values. Additionally, the data often lead
+# to decisions about diagnoses or other categorizations; however,
+# alternative decision criteria might be available. In
+# these situations, it is also appropriate to examine and
+# report the sensitivity of the conclusions with respect to the
+# decision criteria used.
 --------------------------
 
+####Disussion####
+
+#####1. Summarize key results ####
+#with reference to study objectives
+
+#Examples
+#.a large field data collection from 14 endemically infected
+#dairy herds was used to investigate the hypothesis that cattle
+#with persistently high antibody levels are at high risk of
+#shedding S. Dublin and therefore are candidates to be
+#culled or at least managed so that they do not spread the
+#Box 8
+#Interaction (effect modification): the analysis of joint
+#effects
+#Interaction exists when the association of an exposure with
+#the risk of disease differs in the presence of another exposure.
+#One problem in evaluating and reporting interactions
+#is that the effect of an exposure can be measured in two
+#ways: as a risk ratio (or rate ratio) or as a risk difference
+#(or rate difference). The use of the ratio leads to a multiplicative
+#model, while the use of the difference corresponds
+#to an additive model (Rothman et al., 1980; Saracci, 1980).
+#A distinction is sometimes made between ‘statistical interaction’
+#which can be a departure from either a multiplicative
+#or additive model, and ‘biologic interaction’ which is
+#measured by departure from an additive model (Rothman,
+#2012). However, neither additive nor multiplicative models
+#point to a particular biologic mechanism. Regardless of the
+#model choice, the main objective is to understand how the
+#joint effect of two exposures differs from their separate
+#effects (in the absence of the other exposure). The Human
+#Genomic Epidemiology Network (HuGENet) proposed a
+#layout for transparent presentation of separate and joint
+#effects that permits evaluation of different types of interaction
+#(Botto and Khoury, 2001). A difficulty is that some
+#study designs, such as case–control studies, and several statistical
+#models, such as logistic or Cox regression models,
+#estimate risk or rate ratios and intrinsically lead to multiplicative
+#modelling.
+#© 2016 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH
+#Zoonoses and Public Health, 2016, 63, 662–698 689
+#A. M. O’Connor et al. STROBE-Vet Explanation and Elaboration
+#infection to herd mates. Despite that fact that there were
+#seropositive animals in many of the age groups at most of
+#the herd visits, indicative of the herds being endemically
+#infected, the general probability of shedding was very low
+#. for S. Dublin. . Based on this study material there was
+#no evidence that animals with persistently high antibodies
+#over a period of at least 6 months were at higher risk of
+#shedding S. Dublin bacteria in their faeces than other
+#seropositive cattle (Nielsen, 2013).
+
+#Explanation
+#It is good practice to begin the discussion with a short summary
+#of the main findings of the study. The short summary
+#reminds readers of the main findings and might help them
+#assess whether the subsequent interpretation and implications
+#offered by the authors are supported by the findings.
+#
+#
+#
+#####2. Discuss strengths and limitations of the study##### 
+#taking into account sources of potential bias or imprecision.
+#Discuss both direction and magnitude of any potential
+#bias
+
+#Example
+#Because of the steps involved in making a diagnosis of leptospirosis
+#. it is unlikely that a dog examined at a veterinary
+#teaching hospital would be falsely diagnosed as having
+#leptospirosis when it did not. It is more likely that leptospirosis
+#was not diagnosed in some dogs with the disease.
+#This of bias is unlikely to be substantial, because the number
+#of dogs with undiagnosed leptospirosis is probably a
+#very small proportion of all dogs examined at veterinary
+#teaching hospitals. For example, if leptospirosis had been
+#underdiagnosed by a factor of 10-fold, < 0.04% of the
+#1,819,792 dogs examined at veterinary teaching hospitals
+#between 1970 and 1998 would have been classified as cases
+#rather than controls. For the age category 4 to 6.9 years,
+#this bias would result in a change in the estimated OR from
+#1.7259 to 1.7295 (a change of 0.21%), assuming equal proportions
+#of misdiagnoses in the 4 to 6.9 years and < 1 year
+#age categories. We do not expect the proportion of dogs
+#with leptospirosis in which the disease is not diagnosed at
+#veterinary teaching hospitals to be greater than 10-fold that
+#recorded in the VMDB, so bias from misclassification of
+#leptospirosis status was unlikely to be substantial in this
+#study (Ward et al., 2002).
+
+#Explanation
+#Authors should highlight specific strengths of their study
+#relative to other work in the field (e.g. a study based on true
+#random sampling versus convenience sampling). However,
+#the identification and discussion of the limitations of a
+#study are an essential part of scientific reporting. It is
+#important not only to identify the sources of bias and confounding
+#that could have affected results, but also to discuss
+#the relative importance of different biases, including
+#the likely direction and magnitude of any potential bias
+#(see Box 1: Bias in observational studies and Box 5: Confounding
+#and item 9 about bias in method and materials).
+#Authors should also discuss the impact of imprecision
+#and uncertainty on the interpretation of results. Result
+#imprecision could result from a small sample size, which
+#produces a wide CI such as low effect size precision. Here,
+#we refer to uncertainty as missing knowledge related to
+#specific factors, parameters or model specification rather
+#than sample size (Firestone et al., 1997).
+#When discussing limitations, authors might compare the
+#study being presented with other studies in the literature in
+#terms of validity, generalizability and precision. In this
+#approach, each study can be viewed as a contribution to
+#the literature, not as a stand-alone basis for inference and
+#action (Poole et al., 2003).
 
 
---------------------------
-    ####Discussion####
+#####3. Give a cautious overall interpretation of results####
+#considering objectives, limitations, multiplicity of
+#analyses, results from similar studies and other relevant
+#evidence
 
-####1.Key results####
-#Summarise key results with reference to study objectives
+#Examples
+#We conclude that the presence of unresolved infection in a
+#herd is a contributor to further bTB episodes in the first
+#2 years after clearance. These findings agree with the investigations
+#in the UK and Ireland, which have shown repeatedly
+#that bTB spreads from de-restricted herds to clear
+#herds via the transfer of undetected infection after derestriction
+# (Dawson et al., 2014).
 
-####2.Limitations ####
-#Discuss limitations of the study, taking into account sources of potential bias or imprecision.
-#Discuss both direction and magnitude of any potential bias
+#Explanation
+#In accordance with the original STROBE document, we
+#encourage authors to provide the reader with a thoughtful
+#conclusion and a rationale based on the principles of causal
+#inference rather than using P-values less than 0.05 (or any
+#other arbitrary P-value cut-off) as an indicator of a causal
+#association. The heart of the discussion section is the interpretation
+#of a study’s results. When interpreting results,
+#authors should consider the place of the study on the discovery-
+#to-verification continuum and potential sources of
+#bias, including loss to follow-up and non-participation (see
+#also items 9, 12 and 19).
+#In the veterinary field, studies evaluating large numbers
+#of independent variables are common occurrences. The
+#probability that at least one significant finding will be a type
+#I error increases as the number of hypotheses tested within
+#a study increases. Therefore, in the limitations section,
+#authors should note the probability of type I errors as an
+#© 2016 690 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH 
+#Zoonoses and Public Health, 2016, 63, 662–698
+#STROBE-Vet Explanation and Elaboration A. M. O’Connor et al.
+#alternative explanation for the associations observed when
+#appropriate.
+#The rationale should address the concepts used to establish
+#causation. The conclusions presented should consider
+#the role chance and bias could play in the findings of the
+#current study (discussed in item 19) as well as those of previous
+#studies on the same topic. Currently, many guides on
+#causal thinking exist, such as those proposed by Bradford
+#Hill and others (Kaufman and Poole, 2000; Rothman and
+#Greenland, 2005; Hill, 2015). While we are not proposing a
+#formulaic application of guidelines or criteria, readers
+#might find it helpful if the authors document the concepts
+#of causal inference to assist them in understanding the conclusion.
+#For example, how strong is the association with
+#the exposure? Did exposure precede disease onset? Is the
+#association consistently observed in different studies and
+#settings? Is there supporting evidence from experimental
+#studies, including laboratory and animal studies? How
+#specific is the exposure’s putative effect, and is there a
+#dose–response relationship? Is the association biologically
+#plausible? A discussion of the existing external evidence,
+#from different types of studies, should always be included,
+#but might be particularly important for studies reporting
+#small increases in risk. Furthermore, authors should put
+#their results in context with similar studies and explain
+#how the new study affects the existing body of evidence,
+#ideally by referring to a systematic review.
+#
 
-####3.Interpretation ####
-#Give a cautious overall interpretation of results considering objectives, limitations, multiplicityof analyses, results from similar studies, and other relevant evidence
+#####4. Discuss the generalizability (external validity) #####
+#of the study results
 
-####4.Generalisability ####
-#Discuss the generalisability (external validity) of the study results
+#Example
+#The findings from this study would be difficult to extrapolate
+#to other countries, because of the differences in bTB
+#management policies between countries. However, this
+#study has added weight to the growing body of evidence to
+#show that residual infection in herds poses a problem to
+#bTB eradication schemes, and that the goal should be to
+#maximize within-herd sensitivity in the management of this
+#problematic infection (Dawson et al., 2014).
+#Explanation
+#Generalizability, also called external validity or applicability,
+#is the extent to which the results of a study can be
+#applied to other circumstances (Campbell, 1957). There is
+#no external validity per se; the term is meaningful only with
+#regard to clearly specified conditions (Justice et al., 1999).
+#Can results be applied to an individual, groups or populations
+#that differ from those enrolled in the study with
+#regard to age, sex, breed or other characteristic, such as the
+#production system for livestock populations? Are the nature
+#and level of exposures comparable, and the definitions
+#of outcomes relevant to another setting or population? Are
+#results from one country applicable to other countries?
+#The question of whether the results of a study have external
+#validity is often a matter of judgment that depends on
+#the study setting, the characteristics of the participants, the
+#exposures examined and the outcomes assessed. Thus, it is
+#crucial that authors provide readers with adequate information
+#about the setting and locations, eligibility criteria,
+#the exposures and how they were measured, the definition
+#of outcomes and the period of recruitment and follow-up.
+#The degree of non-participation and the proportion of
+#unexposed participants in whom the outcome develops are
+#also relevant. Knowledge of the absolute risk and prevalence
+#of the exposure, which will often vary across populations,
+#are helpful when applying results to other settings
+#and populations. Of course, the need for inclusion of these
+#features is discussed throughout this document and these
+#summary statements only serve as a reminder of the need
+#for complete reporting of research design and results in the
+#context of external validity (See Box 6: Measures of Association
+#and measures of impact.).
+#
+#####Other information####
+#####1. Transparency####
+# (a). Give the source of funding and the role of the
+#funders for the present study and, if applicable, for the
+#original study on which the present article is based
+#
+#Example
+#Funding: This study was funded by Pfizer Animal Health
+#(www.Zoetis.com). The grant number was 1329. The following
+#Pfizer personnel were observers during the study:
+#Jeremy Salt, Michael Pearce, Tony Simon and Marie-Odile
+#Hendrickx. The funders had no role in study design, data
+#collection and analysis, decision to publish, or preparation
+#of the manuscript, except attendance at project coordination
+#meetings as observers, and commenting on the draft
+#manuscript (Jones et al., 2013).
+#
+#Explanation
+#Because of concerns about funding agencies’ influence on
+#study design and the potential for selective reporting,
+#funding sources and the role of funding agencies should
+#be described explicitly. In human health, several investigations
+#show strong associations between the source of
+#funding and the conclusions of research articles (Davidson,
+#1986; Stelfox et al., 1998; Bekelman et al., 2003; Lexchin
+#et al., 2003). To our knowledge, there are no similar
+#associations detected in observational studies conducted
+#in veterinary science. However, the possibility for bias
+#could exist, and it is best practice to disclose all funding
+#sources.
+#© 2016 The Authors. Zoonoses and Public Health published by Blackwell Verlag GmbH
+#Zoonoses and Public Health, 2016, 63, 662–698 691
+#A. M. O’Connor et al. STROBE-Vet Explanation and Elaboration
 
---------------------------
+# (b). Conflict of interests. Describe any conflict of
+#interests, or lack thereof, for each author
+#Dr. . has provided scientific consulting services to Zoetis
+#Inc. (manufacturer of the CCFA product). This does not
+#alter the authors’ adherence to all the journal policies on
+#sharing data and materials (Kanwar et al., 2014)
+#
+#Explanation
+#In human health, there is evidence that authors or funders
+#might have conflict of interests that influence any of the
+#following: the design of the study (Safer, 2002), choice of
+#exposures (Aspinall and Goodman, 1995; Safer, 2002), outcomes
+#(Chan et al., 2004), statistical methods (Melander
+#et al., 2003) and selective publication of outcomes and
+#studies (Chan et al., 2004; Scherer et al., 2007). Potential
+#conflict of interests include financial arrangements outside
+#of research funding that could influence authors. Authors
+#should disclose any financial support, including grants,
+#scholarships and sponsorships received. Gifts that might
+#not be associated directly with the project, such as laboratory
+#equipment, travel, consulting agreements and honoraria,
+#but still establish a relationship with a company or
+#agency should also be disclosed. This information alerts
+#users the relationship and allows them to assess the potential
+#for bias in conducting and reporting the study.
 
-  
-  
---------------------------
-    ####Other information####
-####1.Funding 
-#Give the source of funding and the role of the funders for the present study and, if applicable,for the original study on which the present article is based
-#Give information separately for cases and controls in case-control studies and, if applicable, for exposed and unexposed groups in cohort and cross-sectional studies.
+##### (c). Describe the authors’ roles – provision of an
+#authors’ declaration of transparency is recommended
 
+#Example
+#H.M.S., B.N., G.H.L. and P.B. conceived and designed the
+#study. N.K., H.M.S., B.N., G.H.L., J.V., P.B., J.L.C. and
+#G.C. performed the experiments. N.K., H.M.S., B.N.,
+#G.H.L., P.B., M.M.C. and J.B. analyzed and interpreted
+#data. N.K. and H.M.S. drafted the manuscript. All authors
+#revised manuscript for critically important intellectual content
+#and approved the final version to be published (Kanwar
+#et al., 2014).
+#
+#Explanation
+#A declaration of transparency should contain two parts: the
+#authors’ roles in the study and a declaration of complete
+#reporting. Declarations of transparency do not address any
+#potential bias within the study. They are primarily designed
+#to ensure that all authors meet the criteria for authorship.3
+#Those persons not meeting the authorship criteria can be
+#referenced in the acknowledgements section, but it is
+#unethical to include them as authors. The declaration of
+#complete reporting was proposed by Altman (Altman and
+#Moher, 2013) and is a statement acknowledging that the
+#data have been reported in their entirety and none of the
+#study has been omitted, thus reducing the potential for
+#selective reporting.
+#
+##### (d). Ethical approval – include information on ethical
+#approval for use of animal and human subjects
 
+#Example
+#The study was performed in adherence to the University of
+#Liverpool Animal Ethics Guidelines (Trehy et al., 2014).
 
+#Explanation
+#When studies involve animal use, authors must obtain ethical
+#approval. It is consistent with best practices and transparency
+#to report the agency in charge of approval and a
+#verification number to identify the approval. In some studies,
+#particularly those using questionnaires, authors must
+#document that they received approval for recruiting human
+#participants in research.
 
+##### (e). Quality standards – describe any quality standards
+#used in the conduct of the research
 
-#Note: An Explanation and Elaboration article discusses each checklist item and gives methodological background and published examples of transparent reporting. The STROBE checklist is best used in conjunction with this article (freely available on the Web sites of PLoS Medicine at http://www.plosmedicine.org/, Annals of Internal Medicine at http://www.annals.org/, and Epidemiology at http://www.epidem.com/). Information on the STROBE Initiative iavailable at www.strobe-statement.org.
-
+#Example
+#.reported according to the guidelines of the Strengthening
+#the Reporting of Observational Studies in Epidemiology
+#(STROBE) statement, see additional information (STROBE
+#Checklist) for further details (Forand, 2004).
+#Explanation
+#When standards, such as STROBE, are available and have
+#been used, authors should explicitly state their use, so endusers
+#are aware of their implementation and can validate
+#that they were followed. Further, some standards are
+#lengthy, and it might be impractical to include a full
+#description of the methods employed in the paper. For
+#example, laboratory or animal welfare accreditations indicate
+#that certain practices and quality control approaches
+#were followed, and this information can help end-users
+#assess bias.
