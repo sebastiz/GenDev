@@ -264,7 +264,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Methods-StudyDesign}
-summary(cars)
+
 ```
 <!--
 ####2. Setting ####
@@ -307,7 +307,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Methods-Setting}
-summary(cars)
+
 ```
 <!--
 ####3. Participants ####
@@ -439,7 +439,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Methods-Participants}
-summary(cars)
+
 ```
 <!--
 ####4. Variables ####
@@ -493,7 +493,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Methods-Variables}
-summary(cars)
+
 ```
 <!--
 ####5. Data sources/measurement####
@@ -721,7 +721,17 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Methods-DataSources_or_measurement}
-summary(cars)
+
+######################################### Data acquisiton######################################### 
+
+######################################### Data merging######################################### 
+
+######################################### Data cleaning######################################### 
+#Date cleaning
+######################################### Data accordionisation######################################### 
+
+######################################### Data forking (filtering and subsetting)######################################### 
+
 ```
 <!--
 ####7 Study size: ####
@@ -1138,7 +1148,8 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r MethodsStatisticalMethods}
-summary(cars)
+######################################### Data analysis######################################### 
+
 ```
 <!--
 ####1.Participants####
@@ -1720,8 +1731,14 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r Disussion-1SummarizeKeyResults }
-summary(cars)
-```
+######################################### Code overview (with CodeDepends)######################################### 
+#library(codeDepends)
+#sc = readScript("S:\\Gastroenterology\\Seb\\R\\Scripts\\Eosinophilics\\Eosinophilix.R")
+#g = makeVariableGraph( info =getInputs(sc))
+
+
+#if(require(Rgraphviz))
+#  plot(g)```
 <!--
 #####2. Discuss strengths and limitations of the study##### 
 #taking into account sources of potential bias or imprecision.
