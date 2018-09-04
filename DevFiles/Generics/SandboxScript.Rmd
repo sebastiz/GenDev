@@ -140,9 +140,6 @@ Lab_Fil_Source<-"S:\\Gastroenterology\\Seb\\R\\Data\\PhysiologyHuddleData\\Physi
 
 ####What about adding the dataframe to the value that gets generated from code depends to automate a Sankey plot?
 
-
-
-
     
 ########################################### CODE DOCUMENTATION ############################################
 ```{r echo=FALSE}
