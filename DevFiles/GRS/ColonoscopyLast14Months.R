@@ -7,6 +7,7 @@ library(lattice)
 library(compare)
 library(grid)
 library(reshape2)
+#library(plyr)
 library(gtools)
 library(dplyr)
 library(lubridate)
@@ -25,10 +26,12 @@ local({
   })
 })
 
+
 library(stringr)
 
 
-MyColonData<-read.xlsx("/home/rstudio/GenDev/DevFiles/GRS/CTT004772_DataJan18.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
+
+MyColonData<-read.xlsx("S:\\Gastroenterology\\Seb\\R\\Data\\GRS\\DataJan18ToJuneEnd18.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
 #MyColonData<-MyColonData[-1]
 #names(MyColonData)<-c("PatientID","NHSNumber","PatientName","EndoResultName","Endo_ResultPerformed","Endo_ResultEntered","Endo_ResultText","Histo_ResultName","Histo_ResultPerformed","Histo_ResultEntered","Histo_ResultText")
 #Have to do this as imports as numbers
@@ -73,15 +76,19 @@ MyColonData$Endo_ResultPerformed<-as.Date(MyColonData$Endo_ResultPerformed,forma
 
 
 #Bit of a tidy up
-source("/home/rstudio/GenDev/DevFiles/Generics/CleanUp.R")
+source("S:\\Gastroenterology\\Seb\\R\\Scripts\\Generics\\CleanUp.R")
 #MyColonData<-as.data.frame(mysummary(MyColonData))
 MyColonData<-as.data.frame(EndoscChopper(MyColonData))
 MyColonData<-as.data.frame(HistolChopper(MyColonData))
+
 MyColonData<-data.frame(apply(MyColonData,2,function(y) gsub("_x000D_","",y)))
 
 #Select diagnostic endoscopies only
 MyColonData$ProcPerformed<-as.character(MyColonData$ProcPerformed)
-MyColonData<-MyColonData[grepl("Colonoscopy$",MyColonData$ProcPerformed),]
+#MyColonData<-MyColonData[grepl("Colonoscopy$",MyColonData$ProcPerformed),]
+#To make therapeutic only:
+Therapeutic
+MyColonData<-MyColonData[!grepl("herapeuti",MyColonData$IndicationsFroExamination),]
 #############################################  #############################################  #############################################  #############################################  
 #############################################  #############################################  #############################################  #############################################  
 #############################################  #############################################  #############################################  #############################################  
@@ -106,7 +113,31 @@ MyColonDataAdenomaDetectionByEndoscopist<-MyColonDataAdenomaDetectionByEndoscopi
   group_by(Endo_Endoscopist) %>% 
   do(data.frame(NumAdenomas=nrow(.)))
 ####################################################################################################################################################################################
-###################################################################################################################################################################################
+####################################################################################################################################################################################
+# 
+# #Interim bit to compare with Sabina's- TBB
+# 
+# 
+# AdenomasSeb<-MyColonData[grep(".*denom.*",MyColonData$Histo_ResultText),]
+# AdenomasSebNum<-data.frame(AdenomasSeb$PatientID)
+# names(AdenomasSebNum)<-c("HospNum")
+# AdenomasSebNum$Owner<-"Seb"
+# 
+# MyADR<-read.xlsx("S:\\Gastroenterology\\Seb\\R\\Scripts\\GRS\\ADR.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
+# MyADRAdenomas<-MyADR[grepl("^a$",MyADR$Histology)|grepl("^a\\+",MyADR$Histology),]
+# MyADRNum<-data.frame(MyADRAdenomas$PATIENTRECORDNUMBER)
+# #grep out the adenomas
+# 
+# names(MyADRNum)<-c("HospNum")
+# MyADRNum$Owner<-"De Martino"
+# Discrepantdf<-rbind(MyADRNum,AdenomasSebNum)
+# View(Discrepantdf[unique(Discrepantdf$HospNum),])
+
+####################################################################################################################################################################################
+####################################################################################################################################################################################
+####################################################################################################################################################################################
+####################################################################################################################################################################################
+
 
 MyColonDataColonoscopiesByEndoscopist<-MyColonData %>% 
   group_by(Endo_Endoscopist) %>% 
@@ -263,12 +294,12 @@ newOlympus<-c("C16","C17")
 MyColonDataADRByInstrument$Instrument<-as.character(MyColonDataADRByInstrument$Instrument)
 MyColonDataADRByInstrument$Instrument<-as.character(MyColonDataADRByInstrument$Instrument)
 MyColonDataADRByInstrument$ScopeType<-ifelse(grepl(paste(oldFuji, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"oldFuji",
-                                                ifelse(grepl(paste(newFuji, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newFuji",
-                                                       ifelse(grepl(paste(oldGuys, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"oldGuys",
-                                                              ifelse(grepl(paste(newGuys, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newGuys",
-                                                                     ifelse(grepl(paste(oldOlympus, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"oldOlympus",
-                                                                            ifelse(grepl(paste(newOlympus, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newOlympus",
-                                                                                   "unregistered"))))))
+                                             ifelse(grepl(paste(newFuji, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newFuji",
+                                                    ifelse(grepl(paste(oldGuys, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"oldGuys",
+                                                           ifelse(grepl(paste(newGuys, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newGuys",
+                                                                  ifelse(grepl(paste(oldOlympus, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"oldOlympus",
+                                                                         ifelse(grepl(paste(newOlympus, collapse='|'), MyColonDataADRByInstrument$Instrument,perl=TRUE),"newOlympus",
+                                                                                "unregistered"))))))
 
 MyColonDataADRByInstrumentGrouped<-MyColonDataADRByInstrument%>%group_by(ScopeType)%>%summarise(ADR=mean(PropAdenomas),Failed=mean(PropFailed))
 MyColonDataADRByInstrumentGrouped$Composite<-MyColonDataADRByInstrumentGrouped$ADR+(1/MyColonDataADRByInstrumentGrouped$Failed)*100
@@ -297,7 +328,7 @@ Instruments<-ggplot(MyColonDataADRByInstrument) +
   ylab("ADR(%;red),Composite score(% complete;black),Failed intubation (%green)") +
   theme(axis.text.x=element_text(angle=90)) +
   theme(legend.position="top") 
-  
+
 #Graph for old vs new scopes
 
 InstrumentsGrouped<-ggplot(MyColonDataADRByInstrumentGrouped) + 
