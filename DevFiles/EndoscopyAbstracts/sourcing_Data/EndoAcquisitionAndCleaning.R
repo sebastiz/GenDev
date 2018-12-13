@@ -1,3 +1,5 @@
+#EndoAcquisitionAndCleaning.R
+
 library(EndoMineR)
 library(readxl)
 
@@ -7,6 +9,23 @@ library(readxl)
 #This is where the data is imported
 Self<-read_excel("/home/rstudio/GenDev/DevFiles/EndoscopyAbstracts/data/GSTT_TCR2232_AllEndoscopyProcedure_since_2007.xlsx")
 
+
+#If very large file then can use:
+
+# final.df1<-EndoscChopper(final.df[1:20000,])
+# final.df2<-EndoscChopper(final.df[20001:40000,])
+# final.df3<-EndoscChopper(final.df[40001:60000,])
+# final.df4<-EndoscChopper(final.df[60001:80000,])
+# final.df5<-EndoscChopper(final.df[80001:100000,])
+# final.df6<-EndoscChopper(final.df[100001:the_end,])
+# final.df<-rbind(final.df1,final.df2)
+# final.df<-rbind(final.df,final.df3)
+# final.df<-rbind(final.df,final.df4)
+# final.df<-rbind(final.df,final.df5)
+# final.df<-rbind(final.df,final.df6)
+# 
+# #Get rid of pointless objects
+# rm(final.df1, final.df2, final.df3,final.df4)
 ######################################### Data merging######################################### 
 #This is where external datasets are merged with the current dataset. This can be done after cleaning as well especially if you need to clean dates etc.
 ######################################### Data cleaning######################################### 
@@ -23,13 +42,13 @@ Self<-subset(Self,!(is.na(Self["Endo_ResultName"])))
 Self$Endo_ResultText<-gsub('2nd Endoscopist:','Second endoscopist:',
                            Self$Endo_ResultText)
 EndoscTree<-list("Patient Name:","Date of Birth:","Hospital Number:","Date of Procedure:","Endoscopist:","Second endoscopist:",
-               "Referring Physician:","General Practicioner:","Nurses:",
-               "Medications:","Instrument:","Extent of Exam:","Visualization:","Tolerance:","Complications:","Co-morbidity:",
-               "INDICATIONS FOR EXAMINATION","PROCEDURE PERFORMED",
-               "FINDINGS","ENDOSCOPIC DIAGNOSIS","RECOMMENDATIONS","COMMENTS","BIOPSIES","OPCS4 Code:","Signature:","")
+                 "Referring Physician:","General Practicioner:","Nurses:",
+                 "Medications:","Instrument:","Extent of Exam:","Visualization:","Tolerance:","Complications:","Co-morbidity:",
+                 "INDICATIONS FOR EXAMINATION","PROCEDURE PERFORMED",
+                 "FINDINGS","ENDOSCOPIC DIAGNOSIS","RECOMMENDATIONS","COMMENTS","BIOPSIES","OPCS4 Code:","Signature:","")
 for(i in 1:(length(EndoscTree)-1)) {
   Self<-Extractor2(Self,'Endo_ResultText',as.character(EndoscTree[i]),
-                     as.character(EndoscTree[i+1]),as.character(EndoscTree[i]))
+                   as.character(EndoscTree[i+1]),as.character(EndoscTree[i]))
 }
 
 
@@ -37,14 +56,11 @@ HistolTree<-c("NATURE OF SPECIMEN:","CLINICAL DETAILS","MACROSCOPICAL DESCRIPTIO
               "DIAGNOSIS","")
 for(i in 1:(length(HistolTree)-1)) {
   Self<-Extractor2(Self,"Histo_ResultText",as.character(HistolTree[i]),
-                    as.character(HistolTree[i+1]),as.character(HistolTree[i]))
+                   as.character(HistolTree[i+1]),as.character(HistolTree[i]))
 }
 
 
 
-
-
-######################################### Data forking (filtering and subsetting)######################################### 
 
 Self<-EndoscEndoscopist(Self,'Endoscopist')
 Self$Endoscopist<-gsub("Second","",Self$Endoscopist)
@@ -57,5 +73,3 @@ Self<-EndoscProcPerformed(Self,'PROCEDUREPERFORMED')
 Self<-HistolHistol(Self,'HISTOLOGY')
 Self<-HistolDx(Self,"DIAGNOSIS")
 Self<-HistolExtrapolDx(Self,"DIAGNOSIS")
-
-HowManyTests(Self,'DIAGNOSIS','DateofProcedure','')

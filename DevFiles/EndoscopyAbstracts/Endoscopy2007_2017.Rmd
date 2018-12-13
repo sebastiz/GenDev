@@ -89,7 +89,6 @@ Sigmoidoscopyfinal.df<-final.df[grepl("Sigmoidoscopy",final.df$ProcPerformed),]
 Fil_Sigmoidoscopyfinal.df<-nrow(Sigmoidoscopyfinal.df)
 ```
 
-
 #Script organised according to the cornerstones of gastro data science:
 
 #Surveillance by 
