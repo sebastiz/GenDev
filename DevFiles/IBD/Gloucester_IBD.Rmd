@@ -1,0 +1,177 @@
+---
+title: "IBD_Gloucester"
+author: ""
+#date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+fontsize: 11pt 
+---
+
+
+
+<font size="1">  1. Gastroenterology Data Sciences Institute, St Thomas' Hospital, London SE1, UK    </font>   
+
+
+```{r setup, echo=FALSE, message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Introduction** Patients with Barrett's oesophagus (BE) undergo regular endoscopic surveillance with a view to earlier oesophageal adenocarcinoma detection. Quality monitoring of this programme relies on manual extraction which, given its laboriousness, is a significant hindrance to robust, large scale and reproducible quality monitoring.
+
+EndoMineR, an open source package written in R, has been developed specifically to automate the extraction of data from endoscopic and associated pathology reports^1^.It contains functions to clean, format and extract elements from free text and perform quality metrics for a range of conditions including in BE. 
+
+**Aim** We decided to assess the accuracy of the BE extraction algorithms within EndoMineR, for both endoscopic and pathological elements of BE using only pathology reports as input. This is the 'worst case scenario' input data. The functions being assessed were: 1. The extraction of a Prague score, 2. The extraction of the worst pathology grade, 3. The site of biopsied tissue, 4. The site and type of any therapy in the upper GI tract.
+
+
+```{r Acquisition, echo=FALSE, message=FALSE,warning=FALSE}
+library(PhysiMineR)
+library(tidyverse)
+library(readxl)
+library(EndoMineR)
+library(dplyr)
+library(stringr)
+library(koRpus)
+library(stringi)
+library(stringr)
+
+
+
+######################################### Data acquisiton######################################### 
+#Import the data containing pathology and endoscopy data. It has been pre-cleaned prior to this script
+
+mydata2<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/IBD/data/HistolAndEndoscopyGloucester.xlsx"),stringsAsFactors = FALSE)
+
+```
+
+
+
+```{r Accordionisation,echo=FALSE, message=FALSE,warning=FALSE}
+
+######################################### Data accordionisation######################################### 
+#This cleans the Histology text to provide you with non-negative sentences in the column that you think 
+#gives the Diagnosis or Conclusion. It will remove negative sentences to make
+#Further term searches more accurate
+
+Mypath<-HistolDx(mydata2,'histology_report')
+
+#Try to get the number of biopsies 
+#Get the worst path stage from the Barrett's biopsies
+Mypath$PathSite<-HistolTypeAndSite(Mypath,"proc_type","histology_report","histology_report")
+Mypath$ActualPathSiteIndex<-HistolBiopsyIndex(Mypath,"PathSite")
+Mypath$ActualEndoscopyEvent<-EndoscopyEvent(Mypath,"Therapies","report","histology_report","histology_report")
+
+```
+
+
+```{r DataPreparation,echo=FALSE, message=FALSE,warning=FALSE}
+
+
+IBD_path<-Mypath[grepl("Crohn|ulcerative|inflammatory bowel|IBD|Proctitis|Rectosigmoiditis|Proctocolitis|colitis",Mypath$Dx_Simplified,ignore.case=TRUE),]
+#Also do for the endoscopy indication
+
+
+MyIBD_Path<-IBD_path%>%group_by(lubridate::year(Date.x))%>%summarise(n=n())
+names(MyIBD_Path)<-c('year','freq')
+
+
+
+ggplot(MyIBD_Path, aes(x=year, y=freq)) +
+  geom_bar(stat="identity", fill="lightblue", colour="black")
+
+
+ggplot() + 
+  geom_point(aes(MyIBD_Path$year, MyIBD_Path$freq, color = "red")) +  
+  geom_point(shape=1) +
+  labs(title="Number of IBD patients per annum from the histopath reports", x="year", y="No. patients") +
+  xlab("year") + 
+  ylab("No. patients") +
+  theme(axis.text.x=element_text(angle=-90)) +
+  theme(legend.position="top")
+
+#The output only needs to be evaluated as proportion that match (as there is only a binary output rather than a 2x2 contingency table)
+
+```
+
+
+
+**Methods** 160 patient episodes between `r format(min(as.Date(Barr$SDate)),"%d %B %Y")` and `r format(max(as.Date(Barr$SDate)),"%d %B %Y")` with full text pathology data only were acquired from `r length(unique(Barr$Source))` departments in central London as a training set. Validation was performed on a further 100 pathology reports. The therapy algorithm was performed on a further 100 reports. 
+
+
+```{r DataPresentation1,echo=FALSE, message=FALSE,warning=FALSE}
+
+library(pander)
+library(xtable)
+
+FinalTable<-data.frame(Sensitivities,Specificities,PPV,NPV)
+
+row.names(FinalTable)<-c("MStage","CStage","Worst Pathology","PathologySite","TherapySite")
+#View(FinalTable)
+
+#library(stargazer)
+panderOptions("table.alignment.default","left")
+pander(FinalTable,type="html")
+
+
+#Readability index calculated as follows( but has to be on another computer as cant install quanteda package here)
+#library(quanteda)
+#describe(textstat_readability(mydata2$Report[1:100]))
+
+myreadability<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/BCI_Analysis/data/Myreadbility.xlsx"),stringsAsFactors = FALSE)
+FK<-myreadability[grepl("Flesch.Kincaid",myreadability$rownames.towrite.),]
+
+```
+
+```{r VarDiagram,echo=FALSE, message=FALSE,warning=FALSE}
+#### Documenting the sets 
+
+# nodes <- create_node_df(n=6, 
+#                         nodes=c("ImpAll", "AllBravo", "NegativeImpedance","MyBravoFromNegativeImpedance","MyBravoFromNegativeImpedancePOSITIVE_BRAVO","MyBravoFromNegativeImpedanceNEGATTIVE_BRAVO"),
+#                         label=c(paste0("ImpAll: ",nrow(ImpAll)), stringr::str_wrap(paste0("All BRAVO: ",nrow(AllBravo)),10), stringr::str_wrap(paste0("Negative Impedance: ",nrow(NegativeImpedance)),10),
+#                                 stringr::str_wrap(paste0("MyBravo (Negative Impedance):",nrow(MyBravoFromNegativeImpedance)),10),
+#                                 stringr::str_wrap(paste0("Positive BRAVO:",nrow(MyBravoFromNegativeImpedancePOSITIVE_BRAVO)),10),
+#                                 stringr::str_wrap(paste0("Negative BRAVO: ",nrow(MyBravoFromNegativeImpedanceNEGATTIVE_BRAVO)),10)),
+#                         shape = "rectangle",
+#                         fontsize=5)
+# 
+# edges <-
+#   create_edge_df(
+#     from = c(1,2,3,4,4),
+#     to = c(3,4,4,5,6))
+# 
+# 
+# g <- create_graph(nodes_df=nodes, 
+#                   edges_df=edges)%>%
+#    add_global_graph_attrs(
+#       attr = c("layout", "rankdir", "splines"),
+#       value = c("dot", "TB", "false"),
+#       attr_type = c("graph", "graph", "graph"))
+# render_graph(g)
+
+```
+
+```{r CodeGraph,echo=FALSE, message=FALSE,warning=FALSE}
+####Documenting the code: 
+
+# library(CodeDepends)
+# sc = readScript("/home/rstudio/PhysiMineR/Questions/ImpedanceQues/NegImpBRAVO/NegativeImpedanceBRAVO.Rmd")
+# g = makeVariableGraph( info =getInputs(sc))
+# if(require(Rgraphviz))
+#   edgemode(g) <- "directed"
+# x <- layoutGraph(g, layoutType="neato")
+# zz = layoutGraph(g)
+# graph.par(list(nodes = list(fontsize = 100)))
+# renderGraph(zz)
+
+
+```
+
+
+**Table 1**
+
+**Results** Reports were written by `r length(unique(as.character(BarrTables$ASSP))) ` different pathologists. The readability index of all the text, using the Fleisch-Kincaid readability index was `r paste0(round(FK$mean,2)," (sd:",round(FK$sd,2),")")` indicating an average grammatical complexity.  The results are displayed in Table 1.Sensitivity was excellent for all algorithms especially given the difficult input text. A reduction in specificity in the detection of worst pathology occurred because of dual reporting of colonoscopy and gastroscopy tissue which also affected the sensitivity of the Pathology Site detection. A variability in how intestinalisation was reported also affected the specicificity.
+
+
+**Conclusion** 1. Reproducible extraction of BE parameters can be done from semi-structured text. 2. Further improvements using parts of speech tagging and term mapping will improve the results. 3. Such data extraction will allow for upstream automation of quality monitoring and governance and novel metrics in BE as well as other gastroenterological conditions.
+
+**References**
+<font size="1"> 1. Zeki S, (2018). EndoMineR for the extraction of endoscopic and associated pathology data from medical reports. Journal of Open Source Software, 3(24), 701 </font>
+

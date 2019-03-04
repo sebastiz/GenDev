@@ -32,8 +32,8 @@ mydata2$Date<-as.Date(mydata2$Date,format="YYYY-mm-dd",origin="1899-12-30")
 
 #Convert to time series prepared data using forecast package with the correct minimum and maximum dates
 #- can get this with min(mydata2$Date) and max(mydata2$Date)
-myts_Breach<-ts(mydata2[,2], start=c(2015, 1), end=c(2018, 11), frequency=12) 
-myts_Attend<-ts(mydata2[,3], start=c(2015, 1), end=c(2018, 11), frequency=12) 
+myts_Breach<-ts(mydata2[,2], start=c(2015, 1,1), end=c(2018, 11,11), frequency=365) 
+myts_Attend<-ts(mydata2[,3], start=c(2015, 1,1), end=c(2018, 11,11), frequency=365) 
 
 
 
@@ -100,9 +100,9 @@ dygraph(myts_Attend, main = "Attendance Numbers A&E GSTT") %>%
 #### Plot the forecast Holt-Winters ############ 
 
 # Plot a 12 month forecast from Holt-Winters
-plot(forecast(hw_fit_Breach, h=12))
+plot(forecast(hw_fit_Breach, h=50))
 # Plot a 12 month forecast
-plot(forecast(hw_fit_Attend, h=12))
+plot(forecast(hw_fit_Attend, h=700))
 
 
 

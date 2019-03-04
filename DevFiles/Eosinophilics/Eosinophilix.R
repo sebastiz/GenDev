@@ -123,17 +123,11 @@ PatientsWithEoE<-PatientsWithEoE[grep("[Dd]ysphagia|[Oo]dynophagia|[Ff]ood [Bb]o
 PatientsWithEoEdy<-PatientsWithEoE
 
 
-
-
 ############################################################ Endoscopic ############################################################ 
 
 
 
-
 #Trying to make a word cloud with the endoscopic text:
-
-
-
 
 library("tm")
 library("SnowballC")

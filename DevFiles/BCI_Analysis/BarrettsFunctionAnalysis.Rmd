@@ -1,0 +1,284 @@
+---
+title: "Barrett’s surveillance metrics from natural language text is reliable"
+author: "Zeki SS^1^,Hackett R J^2,3^, Dunn J^1^, Bancil A^1^, Chin-Aleong^3^, Preston S^3^, Brown  MacDonald S^2^"
+#date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+fontsize: 11pt 
+---
+
+
+
+<font size="1">  1. Gastroenterology Data Sciences Institute, St Thomas' Hospital, London SE1, UK    </font>   
+<font size="1"> 2. Tumour Biology, Bart's Cancer Institute, London EC1M, UK  </font>
+<font size="1"> 3. Barts and the London School of Medicine and Dentistry, Queen Mary University of London, London, UK</font>
+
+
+```{r setup, echo=FALSE, message=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Introduction** Patients with Barrett's oesophagus (BE) undergo regular endoscopic surveillance with a view to earlier oesophageal adenocarcinoma detection. Quality monitoring of this programme relies on manual extraction which, given its laboriousness, is a significant hindrance to robust, large scale and reproducible quality monitoring.
+
+EndoMineR, an open source package written in R, has been developed specifically to automate the extraction of data from endoscopic and associated pathology reports^1^.It contains functions to clean, format and extract elements from free text and perform quality metrics for a range of conditions including in BE. 
+
+**Aim** We decided to assess the accuracy of the BE extraction algorithms within EndoMineR, for both endoscopic and pathological elements of BE using only pathology reports as input. This is the 'worst case scenario' input data. The functions being assessed were: 1. The extraction of a Prague score, 2. The extraction of the worst pathology grade, 3. The site of biopsied tissue, 4. The site and type of any therapy in the upper GI tract.
+
+
+
+
+
+
+```{r Acquisition, echo=FALSE, message=FALSE,warning=FALSE}
+library(PhysiMineR)
+library(tidyverse)
+library(readxl)
+library(EndoMineR)
+library(dplyr)
+library(stringr)
+library(koRpus)
+
+
+
+
+######################################### Data acquisiton######################################### 
+#Import the data containing pathology data
+
+mydata2<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/BCI_Analysis/data/Barrett_ValidationData_100Set_23.01.19.xlsx"),stringsAsFactors = FALSE)
+mydataPathSiteValidation<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/BCI_Analysis/data/PathSiteValidation.xlsx"),stringsAsFactors = FALSE)
+mydataEndoscopyEvent<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/BCI_Analysis/data/EndoscopyEvent.xlsx"),stringsAsFactors = FALSE)
+```
+
+```{r Cleaning, echo=FALSE, message=FALSE,warning=FALSE}
+library(stringi)
+library(stringr)
+
+######################################### Data cleaning & Data merging######################################### 
+#This extracts all the pathology data (I've left the Endoscopy extraction for now)
+#EndoscTree<-c("Reporting laboratory reference number","Specimen","Clinical Details","Macroscopy","Microscopy","Conclusion","Reported by")
+#Mypath<-Extractor(mydata2,"Report",EndoscTree)
+
+
+
+```
+
+```{r Accordionisation,echo=FALSE, message=FALSE,warning=FALSE}
+
+######################################### Data accordionisation######################################### 
+#This cleans the Histology text to provide you with non-negative sentences in the column that you think 
+#gives the Diagnosis or Conclusion. It will remove negative sentences to make
+#Further term searches more accurate
+library(stringi)
+library(stringr)
+library(tidyverse)
+
+Mypath<-HistolDx(mydata2,'Original')
+
+#Try to get the number of biopsies 
+#Get the worst path stage from the Barrett's biopsies
+
+Barr<- Barretts_PathStage(Mypath,'Dx_Simplified')
+Barr<- Barretts_PragueScore(Barr,'ClinicalDetails','Original')
+Barr<-Barretts_FUType(Barr)
+mydataPathSiteValidation$PathSite<-HistolTypeAndSite(mydataPathSiteValidation,"PROCEDUREPERFORMED","Histo_ResultText","Histo_ResultText")
+mydataPathSiteValidation$ActualPathSiteIndex<-HistolBiopsyIndex(mydataPathSiteValidation,"PathSite")
+mydataEndoscopyEvent$ActualEndoscopyEvent<-EndoscopyEvent(mydataEndoscopyEvent,"FINDINGS","PROCEDUREPERFORMED","MACROSCOPICALDESCRIPTION","MACROSCOPICALDESCRIPTION")
+
+#Also need to run the edoscopy event here
+
+#Get rid of NA's
+mydataPathSiteValidation$ActualPathSiteIndex<-gsub("^$",NA,mydataPathSiteValidation$ActualPathSiteIndex)
+mydataPathSiteValidation[is.na(mydataPathSiteValidation)] <- "Insufficient"
+mydataEndoscopyEvent$ActualEndoscopyEvent<-gsub("^$",NA,mydataEndoscopyEvent$ActualEndoscopyEvent)
+mydataEndoscopyEvent[is.na(mydataEndoscopyEvent)] <- "Insufficient"
+mydataEndoscopyEvent$RefEndoscopyEvent<-gsub(";;",";",mydataEndoscopyEvent$RefEndoscopyEvent)
+mydataEndoscopyEvent$ActualEndoscopyEvent<-gsub(";;",";",mydataEndoscopyEvent$ActualEndoscopyEvent)
+mydataEndoscopyEvent$RefEndoscopyEvent<-tolower(mydataEndoscopyEvent$RefEndoscopyEvent)
+mydataEndoscopyEvent$ActualEndoscopyEvent<-tolower(mydataEndoscopyEvent$ActualEndoscopyEvent)
+
+```
+
+
+```{r DataPreparation,echo=FALSE, message=FALSE,warning=FALSE}
+
+
+
+SensAndSpecif<-function(dataframe,ref,actual){
+  
+  library(rlang)
+  refa <- sym(ref)
+  actuala <- sym(actual)
+  
+  df<-dataframe %>%
+    mutate(
+      SensAndSpec= case_when(
+        !grepl("[Ii]nsufficient",!!actuala,ignore.case = TRUE) & !!actuala==!!refa ~ "TP",
+        !!actuala!=!!refa & !grepl("[Ii]nsufficient",!!actuala) ~  "FP",
+        grepl("[Ii]nsufficient",!!actuala) & !!actuala!=!!refa ~ "FN",
+        grepl("[Ii]nsufficient",!!actuala,ignore.case = TRUE) & grepl("[Ii]nsufficient",!!refa,ignore.case = TRUE) ~ "TN",
+        TRUE~"other")
+    )
+  
+  
+  TP<-ifelse(is.na(as.integer(table(df$SensAndSpec)["TP"])),0,as.integer(table(df$SensAndSpec)["TP"]))
+  FP<-ifelse(is.na(as.integer(table(df$SensAndSpec)["FP"])),0,as.integer(table(df$SensAndSpec)["FP"]))
+  TN<-ifelse(is.na(as.integer(table(df$SensAndSpec)["TN"])),0,as.integer(table(df$SensAndSpec)["TN"]))
+  FN<-ifelse(is.na(as.integer(table(df$SensAndSpec)["FN"])),0,as.integer(table(df$SensAndSpec)["FN"]))
+
+  
+  Sensitivity<-round(TP/(TP+FN)*100,digits=2)
+  Specificity<-round(TN/(TN+FP)*100,digits=2)
+  PPV<-round(TP / (TP + FP),digits=2)
+  NPV<- round(TN / (FN + TN),digits=2)
+  Accuracy<-round(TP+TN/(TP+TN+FP+FN),digits=2)
+  
+  stats<-list(Sensitivity=Sensitivity,Specificity=Specificity,PPV=PPV,NPV=NPV,Accuracy=Accuracy)
+  
+  return(stats)
+}
+
+
+
+#Select the top 10 from the sheet
+BarrTables<-Barr[1:100,]
+
+
+#####################Clean it up#####################
+BarrTables$TrueC<-as.character(gsub("(\\d+).*","\\1",BarrTables$TrueC))
+BarrTables$TrueM<-as.character(gsub("(\\d+).*","\\1",BarrTables$TrueM))
+
+#####################Do the comparison into a separate column#####################
+BarrTables$SameCStage<-ifelse(trimws(BarrTables$CStage)==trimws(BarrTables$TrueC),1,0)
+BarrTables$SameMStage<-ifelse(trimws(BarrTables$MStage)==trimws(BarrTables$TrueM),1,0)
+BarrTables$SameIM<-ifelse(trimws(BarrTables$IMorNoIM)==trimws(BarrTables$TRUE_IMorNoIM),1,0)
+mydataEndoscopyEvent$SameEndoscopyEvent<-ifelse(trimws(mydataEndoscopyEvent$RefEndoscopyEvent)==trimws(mydataEndoscopyEvent$ActualEndoscopyEvent),1,0)
+mydataPathSiteValidation$SamePathSite<-ifelse(trimws(mydataPathSiteValidation$RefPathSiteIndex)==trimws(mydataPathSiteValidation$ActualPathSiteIndex),1,0)
+
+#####################Review the results where there is a discrepancy:#####################
+MyMistakesMStage<-BarrTables%>%filter(SameMStage==0)%>%select(ClinicalDetails,Dx_Simplified,MStage,TrueM)
+MyMistakesCStage<-BarrTables%>%filter(SameCStage==0)%>%select(ClinicalDetails,Dx_Simplified,CStage,TrueC)
+MyMistakesIM<-BarrTables%>%filter(SameIM==0)%>%select(Original,Reportinglaboratoryreferencenumber.1,Dx_Simplified,IMorNoIM,TRUE_IMorNoIM)
+MyMistakesEndoscopyEvent<-mydataEndoscopyEvent%>%filter(SameEndoscopyEvent==0)%>%select(Histo_ResultText,PROCEDUREPERFORMED,FINDINGS,ActualEndoscopyEvent,RefEndoscopyEvent)
+MyMistakesPathSiteIndex<-mydataPathSiteValidation%>%filter(SamePathSite==0)%>%select(Histo_ResultText,PROCEDUREPERFORMED,FINDINGS,PathSite,ActualPathSiteIndex,RefPathSiteIndex)
+
+#View(MyMistakesMStage)
+#View(MyMistakesCStage)
+#View(MyMistakesIM)
+#View(MyMistakesEndoscopyEvent)
+#View(MyMistakesPathSiteIndex)
+
+
+
+
+
+#####################Retest#####################
+#Try each phrase that isnt picked up out by debugging within the function with that row only
+#Barretts_PragueScore(MyMistakesCStage[1,],"ClinicalDetails","Dx_Simplified")
+#Barretts_PragueScore(MyMistakesMStage[2,],"ClinicalDetails","Dx_Simplified")
+#Barretts_PathStage(MyMistakesIM[7,],"Dx_Simplified")
+#EndoscopyEvent(MyMistakesEndoscopyEvent[5,],"FINDINGS","PROCEDUREPERFORMED","MACROSCOPICALDESCRIPTION","MACROSCOPICALDESCRIPTION")
+MyMistakesPathSiteIndex[1,]$PathSite<-HistolTypeAndSite(MyMistakesPathSiteIndex[1,],"PROCEDUREPERFORMED","Histo_ResultText","Histo_ResultText")
+MyMistakesPathSiteIndex[1,]$ActualPathSiteIndex<-HistolBiopsyIndex(MyMistakesPathSiteIndex[1,],"PathSite")
+
+
+statsMStage<-SensAndSpecif(BarrTables,"TrueM","MStage")
+statsCStage<-SensAndSpecif(BarrTables,"TrueC","CStage")
+statsIM<-SensAndSpecif(BarrTables,"TRUE_IMorNoIM","IMorNoIM")
+statsPathStage<-SensAndSpecif(mydataPathSiteValidation,"RefPathSiteIndex","ActualPathSiteIndex")
+statsEndoscopyEvent<-SensAndSpecif(mydataEndoscopyEvent,"RefEndoscopyEvent","ActualEndoscopyEvent")
+#Now create a table with the results
+
+Sensitivities<-c(statsMStage$Sensitivity,statsCStage$Sensitivity,statsIM$Sensitivity,statsPathStage$Sensitivity,statsEndoscopyEvent$Sensitivity)
+Specificities<-c(statsMStage$Specificity,statsCStage$Specificity,statsIM$Specificity,statsPathStage$Specificity,statsEndoscopyEvent$Specificity)
+PPV<-c(statsMStage$PPV,statsCStage$PPV,statsIM$PPV,statsPathStage$PPV,statsEndoscopyEvent$PPV)
+NPV<-c(statsMStage$NPV,statsCStage$NPV,statsIM$NPV,statsPathStage$NPV,statsEndoscopyEvent$NPV)
+Accuracy<-c(statsMStage$Accuracy,statsCStage$Accuracy,statsIM$Accuracy,statsPathStage$Accuracy,statsEndoscopyEvent$Accuracy)
+
+
+#The output only needs to be evaluated as proportion that match (as there is only a binary output rather than a 2x2 contingency table)
+
+```
+
+
+
+**Methods** 160 patient episodes between `r format(min(as.Date(Barr$SDate)),"%d %B %Y")` and `r format(max(as.Date(Barr$SDate)),"%d %B %Y")` with full text pathology data only were acquired from `r length(unique(Barr$Source))` departments in central London as a training set. Validation was performed on a further 100 pathology reports. The therapy algorithm was performed on a further 100 reports. 
+
+
+```{r DataPresentation1,echo=FALSE, message=FALSE,warning=FALSE}
+
+library(pander)
+library(xtable)
+
+FinalTable<-data.frame(Sensitivities,Specificities,PPV,NPV)
+
+row.names(FinalTable)<-c("MStage","CStage","Worst Pathology","PathologySite","TherapySite")
+#View(FinalTable)
+
+#library(stargazer)
+panderOptions("table.alignment.default","left")
+pander(FinalTable,type="html")
+
+
+#Readability index calculated as follows( but has to be on another computer as cant install quanteda package here)
+#library(quanteda)
+#describe(textstat_readability(mydata2$Report[1:100]))
+
+myreadability<-data.frame(read_excel("/home/rstudio/GenDev/DevFiles/BCI_Analysis/data/Myreadbility.xlsx"),stringsAsFactors = FALSE)
+FK<-myreadability[grepl("Flesch.Kincaid",myreadability$rownames.towrite.),]
+
+```
+
+```{r VarDiagram,echo=FALSE, message=FALSE,warning=FALSE}
+#### Documenting the sets 
+
+# nodes <- create_node_df(n=6, 
+#                         nodes=c("ImpAll", "AllBravo", "NegativeImpedance","MyBravoFromNegativeImpedance","MyBravoFromNegativeImpedancePOSITIVE_BRAVO","MyBravoFromNegativeImpedanceNEGATTIVE_BRAVO"),
+#                         label=c(paste0("ImpAll: ",nrow(ImpAll)), stringr::str_wrap(paste0("All BRAVO: ",nrow(AllBravo)),10), stringr::str_wrap(paste0("Negative Impedance: ",nrow(NegativeImpedance)),10),
+#                                 stringr::str_wrap(paste0("MyBravo (Negative Impedance):",nrow(MyBravoFromNegativeImpedance)),10),
+#                                 stringr::str_wrap(paste0("Positive BRAVO:",nrow(MyBravoFromNegativeImpedancePOSITIVE_BRAVO)),10),
+#                                 stringr::str_wrap(paste0("Negative BRAVO: ",nrow(MyBravoFromNegativeImpedanceNEGATTIVE_BRAVO)),10)),
+#                         shape = "rectangle",
+#                         fontsize=5)
+# 
+# edges <-
+#   create_edge_df(
+#     from = c(1,2,3,4,4),
+#     to = c(3,4,4,5,6))
+# 
+# 
+# g <- create_graph(nodes_df=nodes, 
+#                   edges_df=edges)%>%
+#    add_global_graph_attrs(
+#       attr = c("layout", "rankdir", "splines"),
+#       value = c("dot", "TB", "false"),
+#       attr_type = c("graph", "graph", "graph"))
+# render_graph(g)
+
+```
+
+```{r CodeGraph,echo=FALSE, message=FALSE,warning=FALSE}
+####Documenting the code: 
+
+# library(CodeDepends)
+# sc = readScript("/home/rstudio/PhysiMineR/Questions/ImpedanceQues/NegImpBRAVO/NegativeImpedanceBRAVO.Rmd")
+# g = makeVariableGraph( info =getInputs(sc))
+# if(require(Rgraphviz))
+#   edgemode(g) <- "directed"
+# x <- layoutGraph(g, layoutType="neato")
+# zz = layoutGraph(g)
+# graph.par(list(nodes = list(fontsize = 100)))
+# renderGraph(zz)
+
+
+```
+
+
+**Table 1**
+
+**Results** Reports were written by `r length(unique(as.character(BarrTables$ASSP))) ` different pathologists. The readability index of all the text, using the Fleisch-Kincaid readability index was `r paste0(round(FK$mean,2)," (sd:",round(FK$sd,2),")")` indicating an average grammatical complexity.  The results are displayed in Table 1.Sensitivity was excellent for all algorithms especially given the difficult input text. A reduction in specificity in the detection of worst pathology occurred because of dual reporting of colonoscopy and gastroscopy tissue which also affected the sensitivity of the Pathology Site detection. A variability in how intestinalisation was reported also affected the specicificity.
+
+
+**Conclusion** 1. Reproducible extraction of BE parameters can be done from semi-structured text. 2. Further improvements using parts of speech tagging and term mapping will improve the results. 3. Such data extraction will allow for upstream automation of quality monitoring and governance and novel metrics in BE as well as other gastroenterological conditions.
+
+**References**
+<font size="1"> 1. Zeki S, (2018). EndoMineR for the extraction of endoscopic and associated pathology data from medical reports. Journal of Open Source Software, 3(24), 701 </font>
+
