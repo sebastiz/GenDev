@@ -12,36 +12,46 @@ library(xtable)
 library(stringr)
 
 
-MyColonData<-read.xlsx("/home/rstudio/GenDev/DevFiles/GRS/CTT004772_DataJan18.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
-MyColonData$Endo_ResultEntered<-as.Date(MyColonData$Endo_ResultEntered,format="%d-%m-%Y", origin = "1960-10-01")
-MyColonData$Endo_ResultPerformed<-as.Date(MyColonData$Endo_ResultPerformed,format="%d-%m-%Y", origin = "1960-10-01")
+#If you have to cobble the data togather from monthly forms then use TCR2232 spreadsheet reports.
+library(EndoMineR)
+MyColonData<-read.xlsx("/home/rstudio/GenDev/DevFiles/GRS/July19GSTT_TCR2231_ColonoscopyProcedure_5_8_19.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
+#names(MyColonData)<-gsub("\\.","",names(MyColonData))
+MyColonData<-EndoPaste(MyColonData)
+MyColonData<-data.frame(MyColonData[[1]],stringsAsFactors = FALSE)
+MyColonData$Endo_ResultText<-gsub("2nd","Second",MyColonData$Endo_ResultText)
 
-#############################################  DATA CLEANING ###############################  #############################################  #############################################  
+mywords<-c("Patient.ID","NHS.no","Patient.Name","Birthday.Num","Birthmonth.Num","Birthyear.Num","Endo_Result.Name","Endo_Result.Performed",
+           "Endo_Result.Entered","Endo_Result.Text","Date.of.Birth","General.Practicioner","Referring.Physician","Hospital Number",
+           "Date of Procedure","Endoscopist","2nd Endoscopist","Trainee","Referring Physician","Nurses","Medications","Instrument",
+           "Extent of Exam","Complications","Comorbidity","INDICATIONS.FOR.EXAMINATION","PROCEDURE.PERFORMED","Withdrawal Time",
+           "Quality of Bowel Preparation","FINDINGS","ENDOSCOPIC DIAGNOSIS","2ww","RECOMMENDATIONS","COMMENTS","FOLLO UP","OPCS4 Code",
+           "Signature","Histo_Result.Name","Histo_Result.Performed","Histo_Result.Entered","Histo_Result.Text","Histopathology Report","Report Collected on",
+           "Accession","Received on","Clinical Information","Macroscopic Description","Submitted by","Microscopic Description","Diagnosis",
+           "Reported by","Verified")
 
-#Bit of a tidy up
-source("/home/rstudio/GenDev/DevFiles/Generics/CleanUp.R")
-MyColonData<-as.data.frame(EndoscChopper(MyColonData))
-MyColonData<-as.data.frame(HistolChopper(MyColonData))
-MyColonData<-data.frame(apply(MyColonData,2,function(y) gsub("_x000D_","",y)))
 
-#Select diagnostic endoscopies only
-MyColonData$ProcPerformed<-as.character(MyColonData$ProcPerformed)
-MyColonData<-MyColonData[grepl("Colonoscopy$",MyColonData$ProcPerformed),]
-#############################################  #############################################  #############################################  #############################################  
+MyColonData<-textPrep(MyColonData$X1_X2_X3,mywords)
+MyColonData$dateofprocedure<-as.Date(MyColonData$dateofprocedure,format="%d/%m/%Y", origin = "1960-10-01")
+MyColonData$histo_resultperformed<-as.Date(MyColonData$histo_resultperformed,format="%d/%m/%Y", origin = "1960-10-01")
+
+#Select only the colonoscopies:
+MyColonData$procedureperformed<-as.character(MyColonData$procedureperformed)
+MyColonData<-MyColonData[grepl("colonoscop",MyColonData$procedureperformed),]
+
 
 ######################################################### by endoscopist for adenomas ####################  #############################################  #############################################  
 #Get the adenomas vs the number of colons done by endoscopist:
-MyColonDataAdenomaDetectionByEndoscopist<-MyColonData[grepl(".*denoma.*",MyColonData$Histo_ResultTextForFindings),] 
+MyColonDataAdenomaDetectionByEndoscopist<-MyColonData[grepl("denoma|serrate|denoca",paste(MyColonData$microscopicdescription,MyColonData$histo_resultname,MyColonData$diagnosis,MyColonData$macroscopicdescription,MyColonData$histo_resulttext)),] 
 MyColonDataAdenomaDetectionByEndoscopist<-MyColonDataAdenomaDetectionByEndoscopist%>% 
-  group_by(Endo_Endoscopist) %>% 
+  group_by(endoscopist) %>% 
   do(data.frame(NumAdenomas=nrow(.)))
 
 MyColonDataColonoscopiesByEndoscopist<-MyColonData %>% 
-  group_by(Endo_Endoscopist) %>% 
+  group_by(endoscopist) %>% 
   do(data.frame(NumColons=nrow(.)))
 
 #Merge the two above by column to get proportion:
-MyColonDataADR<-full_join(MyColonDataAdenomaDetectionByEndoscopist,MyColonDataColonoscopiesByEndoscopist,by=c("Endo_Endoscopist"))
+MyColonDataADR<-full_join(MyColonDataAdenomaDetectionByEndoscopist,MyColonDataColonoscopiesByEndoscopist,by=c("endoscopist"))
 MyColonDataADR$PropAdenomas<-(MyColonDataADR$NumAdenomas/ MyColonDataADR$NumColons)*100
 
 
@@ -102,7 +112,8 @@ FinalTable<-full_join(FinalTable,MyColonDataHGD_Adenomas,by=c("Endo_Endoscopist"
 FinalTable<-full_join(FinalTable,MyColonDataSerr_Adenomas,by=c("Endo_Endoscopist"))
 FinalTable$HyperplasticToAdenomaRatio<-FinalTable$PropAdenomas/FinalTable$PropHyperplastic
 
-
+library(writexl)
+write_xlsx(FinalTable,"ADRTable.xlsx")
 
 TBB<- ggplot(FinalTable)+
   geom_point(aes(NumColons.y, PropHyperplastic, color="red"))+
